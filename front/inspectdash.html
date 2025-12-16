@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection Dashboard - Audit Cell</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar-header {
+            text-align: center;
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-header h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .sidebar-nav {
+            flex: 1;
+        }
+        
+        .nav-item {
+            padding: 14px 25px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-item.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .nav-item i {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .top-bar {
+            background-color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #2a5298;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .content-area {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #1e3c72;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-title i {
+            margin-right: 10px;
+            font-size: 26px;
+        }
+        
+        /* Form Styles */
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .action-btn i {
+            margin-right: 6px;
+        }
+        
+        .clear-btn {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .export-btn {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .import-btn {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .print-btn {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #2a5298;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(42, 82, 152, 0.2);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .submit-btn i {
+            margin-right: 8px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+        
+        /* Dashboard Cards */
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .inspections .card-icon {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .pending .card-icon {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .resolved .card-icon {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .card h3 {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .card .value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+        
+        /* Table Styles */
+        .table-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        td {
+            padding: 15px;
+        }
+        
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .status-pending {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .status-completed {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .delete-btn {
+            background-color: #ffebee;
+            color: #d32f2f;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+        
+        .delete-btn:hover {
+            background-color: #ffcdd2;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 0.4s;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.success {
+            background-color: #4CAF50;
+        }
+        
+        .notification.error {
+            background-color: #f44336;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                width: 80px;
+            }
+            
+            .sidebar-header h2, .nav-item span {
+                display: none;
+            }
+            
+            .nav-item {
+                justify-content: center;
+                padding: 15px;
+            }
+            
+            .nav-item i {
+                margin-right: 0;
+                font-size: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Inspection Panel</h2>
+        </div>
+        <div class="sidebar-nav">
+            <div class="nav-item active" onclick="showSection('overview')">
+                <i class="fas fa-chart-pie"></i>
+                <span>Overview</span>
+            </div>
+            <div class="nav-item" onclick="showSection('inspectionForm')">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Inspection Form</span>
+            </div>
+            <div class="nav-item" onclick="showSection('reports')">
+                <i class="fas fa-file-alt"></i>
+                <span>Inspection Reports</span>
+            </div>
+            <div class="nav-item" onclick="showSection('complaints')">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Complaints</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="page-title">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Inspection Dashboard</span>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">IP</div>
+                <div>Inspect</div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- Overview Section -->
+            <section id="overview" class="section">
+                <div class="dashboard-cards">
+                    <div class="card inspections">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Total Inspections</h3>
+                        <div class="value">0</div>
+                    </div>
+                    <div class="card pending">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Pending Reports</h3>
+                        <div class="value">0</div>
+                    </div>
+                    <div class="card resolved">
+                        <div class="card-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Resolved Complaints</h3>
+                        <div class="value">0</div>
+                    </div>
+                </div>
+
+                <!-- My Submissions Section -->
+                <section id="mySubmissionsSection" style="margin-top:30px;">
+                    <h2 style="color:#1e3c72; margin-bottom:20px; font-size:22px;">My Submissions</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>College Name</th>
+                                    <th>Course</th>
+                                    <th>Inspection Date</th>
+                                    <th>Submitted At</th>
+                                    <th>Status</th>
+                                    <th>Reviewed By</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mySubmissionsBody">
+                                <tr>
+                                    <td colspan="7" style="text-align:center; padding:20px; color:#666;">Loading your submissions...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+<!-- Inspection Form Section (embed full form) -->
+<section id="inspectionForm" class="section" style="display:none;">
+    <div class="form-container">
+        <div class="form-header">
+            <div class="form-title">Inspection Submission (Full Form)</div>
+            <div class="form-actions">
+                <a href="inspection form.html" target="_blank" class="action-btn" style="background:#e3f2fd;color:#1976d2"><i class="fas fa-external-link-alt"></i> Open Full Form in New Tab</a>
+            </div>
+        </div>
+
+    
+                    
+            <!-- Reports Section -->
+            <section id="reports" class="section" style="display:none;">
+                <h2 style="margin-bottom: 20px;">Inspection Reports</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>College Name</th>
+                                <th>Inspection Date</th>
+                                <th>Status</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MGU Engineering College</td>
+                                <td>2025-10-22</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>All records verified</td>
+                            </tr>
+                            <tr>
+                                <td>ABC Polytechnic</td>
+                                <td>2025-10-20</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>Need attendance proof</td>
+                            </tr>
+                            <tr>
+                                <td>XYZ Arts College</td>
+                                <td>2025-10-18</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>Infrastructure inspection done</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Complaints Section -->
+            <section id="complaints" class="section" style="display:none;">
+                <h2 style="margin-bottom: 20px;">Complaint View</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>College</th>
+                                <th>Complaint</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>XYZ College</td>
+                                <td>Delay in inspection approval</td>
+                                <td>2025-10-20</td>
+                                <td><button class="delete-btn" onclick="deleteComplaint(this)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>MGU Arts College</td>
+                                <td>Incomplete inspection form</td>
+                                <td>2025-10-21</td>
+                                <td><button class="delete-btn" onclick="deleteComplaint(this)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>ABC Polytechnic</td>
+                                <td>Missing documents in report</td>
+                                <td>2025-10-19</td>
+                                <td><button class="delete-btn" onclick="deleteComplaint(this)">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="js/config.js"></script>
+    <script>
+        // Listen for messages from the iframe (inspection form submission)
+        window.addEventListener('message', (event) => {
+          if (event.data && event.data.type === 'inspection_submitted' && event.data.status === 'success') {
+            console.log('Received inspection_submitted message from iframe');
+            showNotification('Form submitted to admin dashboard successfully!', 'success');
+            
+            // Switch to Overview section
+            showSection('overview');
+            
+            // Update overview counters
+            try {
+              const totalEl = document.querySelector('.card.inspections .value');
+              const pendingEl = document.querySelector('.card.pending .value');
+              if (totalEl) {
+                const current = parseInt(totalEl.textContent || '0', 10) || 0;
+                totalEl.textContent = current + 1;
+              }
+              if (pendingEl) {
+                const curPending = parseInt(pendingEl.textContent || '0', 10) || 0;
+                pendingEl.textContent = curPending + 1;
+              }
+            } catch (err) {
+              console.warn('Could not update overview counters:', err);
+            }
+          }
+        });
+
+        // Section navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => {
+                sec.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        // Delete complaint
+        function deleteComplaint(button) {
+            const row = button.closest('tr');
+            const id = row.cells[0].textContent;
+            if (confirm(`Are you sure you want to delete complaint ID ${id}?`)) {
+                row.remove();
+                showNotification(`Complaint ID ${id} deleted successfully.`, 'success');
+            }
+        }
+
+        // Show notification
+        function showNotification(message, type) {
+            const notif = document.getElementById('notification');
+            notif.textContent = message;
+            notif.className = 'notification ' + type;
+            notif.classList.add('show');
+            
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 3000);
+        }
+
+        // Submit form to admin (only attach if the inline form exists — when iframe is used this will be absent)
+        const inspectionFormEl = document.getElementById('inspectionFormElement');
+        if (inspectionFormEl) inspectionFormEl.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Build payload so we can inspect the status after submit
+            const payload = {
+                type: 'inspection',
+                collegeName: data.collegeName,
+                collegeCode: data.collegeCode || null,
+                submittedBy: (localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).email : null),
+                submittedByName: (localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).name : null),
+                academicYear: new Date().getFullYear().toString(),
+                submissionDate: new Date().toISOString(),
+                formData: data,
+                status: data.status ? (data.status.toLowerCase().includes('completed') ? 'inspection_completed' : 'inspection_pending') : 'inspection_pending'
+            };
+
+            try {
+                // Submit inspection form to backend
+                const result = await makeRequest(API_CONFIG.ENDPOINTS.SUBMIT_ACADEMIC_FORM, 'POST', payload);
+
+                if (result && result.success) {
+                    showNotification('Form submitted to admin dashboard successfully!', 'success');
+                    this.reset();
+
+                    // After successful submit: switch to Overview and update counts
+                    showSection('overview');
+
+                    // Update overview counters: Total Inspections and Pending Reports
+                    try {
+                        const totalEl = document.querySelector('.card.inspections .value');
+                        const pendingEl = document.querySelector('.card.pending .value');
+                        if (totalEl) {
+                            const current = parseInt(totalEl.textContent || '0', 10) || 0;
+                            totalEl.textContent = current + 1;
+                        }
+                        if (pendingEl && payload.status && payload.status.includes('pending')) {
+                            const curPending = parseInt(pendingEl.textContent || '0', 10) || 0;
+                            pendingEl.textContent = curPending + 1;
+                        }
+                    } catch (err) {
+                        // non-critical — just log
+                        console.warn('Could not update overview counters:', err);
+                    }
+
+                } else {
+                    showNotification('Failed to submit form. ' + (result && result.message ? result.message : ''), 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('Server error. Could not submit form.', 'error');
+            }
+        });
+
+        // Clear form (if button exists)
+        const clearBtn = document.getElementById('clearBtn');
+        if (clearBtn) clearBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear the form?')) {
+                document.getElementById('inspectionFormElement').reset();
+                showNotification('Form cleared successfully!', 'success');
+            }
+        });
+
+        // Export / Import / Print handlers only when those controls exist (inline form present). When iframe is used, the full form handles its own controls.
+        const exportBtn = document.getElementById('exportBtn');
+        if (exportBtn) exportBtn.addEventListener('click', function() {
+            const form = document.getElementById('inspectionFormElement');
+            if (!form) return showNotification('No form available to export', 'error');
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'inspection_form.json';
+            link.click();
+            showNotification('Form exported as JSON successfully!', 'success');
+        });
+
+        const importBtn = document.getElementById('importBtn');
+        if (importBtn) importBtn.addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file'; input.accept = '.json';
+            input.onchange = e => {
+                const file = e.target.files[0]; const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        const form = document.getElementById('inspectionFormElement');
+                        if (!form) return showNotification('No form to import into', 'error');
+                        for (const key in data) { if (form.elements[key]) form.elements[key].value = data[key]; }
+                        showNotification('Form imported from JSON successfully!', 'success');
+                    } catch (error) { showNotification('Error importing JSON file. Please check the file format.', 'error'); }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        });
+
+        const printBtn = document.getElementById('printBtn');
+        if (printBtn) printBtn.addEventListener('click', function() {
+            const formSection = document.getElementById('inspectionForm');
+            if (!formSection) return showNotification('Nothing to print', 'error');
+            const originalContents = document.body.innerHTML;
+            document.body.innerHTML = formSection.innerHTML;
+            window.print();
+            document.body.innerHTML = originalContents;
+            showSection('inspectionForm');
+            showNotification('Form printed successfully!', 'success');
+        });
+
+        // Load user's inspection submissions
+        async function loadMySubmissions() {
+            const userStr = localStorage.getItem('user');
+            const tbody = document.getElementById('mySubmissionsBody');
+            
+            if (!userStr) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px; color:#666;">Please login to see your submissions.</td></tr>';
+                return;
+            }
+
+            try {
+                const user = JSON.parse(userStr);
+                const res = await fetch(`/my/academic-forms?email=${encodeURIComponent(user.email)}`);
+                const data = await res.json();
+
+                if (!data.success || !data.forms) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px; color:#666;">Error loading submissions.</td></tr>';
+                    return;
+                }
+
+                // Filter only inspection submissions
+                const inspections = data.forms.filter(f => (f.type || '').toLowerCase() === 'inspection');
+
+                if (inspections.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px; color:#666;">No inspection submissions yet.</td></tr>';
+                    return;
+                }
+
+                // Build table rows
+                let html = ''; 
+                inspections.forEach(f => {
+                    const st = (f.status || 'pending_review').toString().toLowerCase();
+                    const statusLabel = st.includes('pending') ? 'Pending' : (st.includes('completed') ? 'Completed' : (st === 'approved' ? 'Approved' : (st === 'rejected' ? 'Rejected' : f.status)));
+
+                    // Status styling
+                    let statusStyle = '';
+                    if (st === 'approved' || st.includes('completed')) {
+                        statusStyle = 'background-color:#e8f5e9; color:#2e7d32; font-weight:bold; padding:4px 8px; border-radius:4px;';
+                    } else if (st.includes('pending')) {
+                        statusStyle = 'background-color:#fff3e0; color:#ef6c00; font-weight:bold; padding:4px 8px; border-radius:4px;';
+                    } else if (st === 'rejected') {
+                        statusStyle = 'background-color:#ffebee; color:#c62828; font-weight:bold; padding:4px 8px; border-radius:4px;';
+                    }
+
+                    const college = f.collegeName || (f.formData && f.formData.collegeName) || '-';
+                    const course = f.course || (f.formData && f.formData.course) || '-';
+                    const inspectionDate = f.inspectionDate || (f.formData && f.formData.inspectionDate) || '-';
+                    const submittedAt = new Date(f.submissionDate || f.created_at || f.submittedAt).toLocaleString();
+                    const reviewer = f.reviewedByName || f.reviewedBy || '-';
+
+                    html += `<tr>
+                        <td style="padding:12px; border:1px solid #ddd;">${f.id}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">${college}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">${course}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">${inspectionDate}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">${submittedAt}</td>
+                        <td style="padding:12px; border:1px solid #ddd;"><span style="${statusStyle}">${statusLabel}</span></td>
+                        <td style="padding:12px; border:1px solid #ddd;">${reviewer}</td>
+                    </tr>`;
+                });
+
+                tbody.innerHTML = html;
+            } catch (err) {
+                console.error('Error loading submissions:', err);
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px; color:#d32f2f;">Error loading submissions.</td></tr>';
+            }
+        }
+
+        // Load submissions when page loads
+        window.addEventListener('load', loadMySubmissions);
+        // Also reload when a form is submitted (check every 2 seconds after submit)
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'inspection_submitted') {
+                setTimeout(loadMySubmissions, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Audit Cell - Inspection Form</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 40px;
+      background: #f9f9f9;
+      color: #222;
+    }
+    .container {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 25px 35px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    .header h2 {
+      margin: 5px 0;
+      font-size: 20px;
+    }
+    .header p {
+      margin: 0;
+      font-size: 14px;
+    }
+    h3 {
+      text-align: center;
+      font-size: 16px;
+      text-decoration: underline;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .form-section {
+      margin-bottom: 20px;
+    }
+    .form-section label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .form-section input,
+    .form-section select,
+    textarea {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .observations {
+      margin-top: 25px;
+    }
+    .observations h4 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-decoration: underline;
+    }
+    .observations ol {
+      padding-left: 20px;
+    }
+    .sub-points {
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    table, th, td {
+      border: 1px solid #777;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: right;
+      font-size: 13px;
+    }
+    .btn {
+      display: inline-block;
+      background: #1d6be0;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #1553ad;
+    }
+    .sign-line {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h2>INSPECTION FORM</h2>
+    <p><b>MAHATMA GANDHI UNIVERSITY</b></p>
+   
+  </div>
+
+  <h3>Report of the Inspection Committee for Grant of Extension of Provisional Affiliation MBA Courses for the Academic Year 2024-25</h3>
+
+  <div class="form-section">
+  <label>Name of the College: <span style="color:red">*</span></label>
+    <input type="text" id="collegeName" name="collegeName" placeholder="Enter college name">
+
+    <label>College Code: <span style="color:red">*</span></label>
+    <input type="text" id="collegeCode" name="collegeCode" placeholder="Enter college code">
+
+    <label>Complete Address and Email ID:</label>
+    <input type="text" placeholder="Enter address and email">
+
+    <label>Phone / Mobile No:</label>
+    <input type="text" placeholder="Enter phone number">
+
+    <label>Year of Establishment:</label>
+    <input type="text" placeholder="Enter year">
+
+    <label>Name of the Society:</label>
+    <input type="text" placeholder="Enter society name">
+
+    <label>Status:</label>
+    <select>
+      <option value="Non Minority">Non Minority</option>
+      <option value="Minority">Minority</option>
+    </select>
+
+  <label>Date of Inspection: <span style="color:red">*</span></label>
+    <input type="date">
+
+  <label>Course: <span style="color:red">*</span></label>
+    <input type="text" id="course" name="course" placeholder="Enter course">
+
+    <label>Intake:</label>
+    <input type="number" placeholder="Enter intake">
+  </div>
+
+  <div class="observations">
+    <h4>A. OBSERVATIONS</h4>
+    <ol>
+      <li> Whether Compliance Report submitted for the academic year 2023-24:
+        <select><option>Yes</option><option>No</option></select>
+      </li>
+      <li> Whether the conditions stipulated are:
+        <select>
+          <option>Fulfilled</option>
+          <option>Partially Fulfilled</option>
+          <option>Not Fulfilled</option>
+        </select>
+      </li>
+      <li> AICTE Revised Recognition Order for the year 2023-24 (With intake of ___):
+        <select><option>Yes</option><option>No</option></select>
+      </li>
+    </ol>
+
+    <ol start="2">
+      <li>Building
+        <div class="sub-points">
+          <p>1. Registered Sale Deed Document No.: <input type="text"></p>
+          <p>2. Registered Lease Deed Document No.: <input type="text"></p>
+          <p>3. Date of Expiry of Registered Lease Deed: <input type="date"></p>
+        </div>
+      </li>
+      <li>Accommodation: RCC roof / Sheds
+        <div class="sub-points">
+          <p>Number of Class Rooms: <input type="number"></p>
+          <p>Seminar Hall:
+            <select><option>Available</option><option>Not Available</option></select>
+          </p>
+        </div>
+      </li>
+      <li>Library</li>
+    </ol>
+
+    <!-- Library Books Table -->
+    <table>
+      <tr>
+        <th colspan="2">Total Number of Books</th>
+        <th colspan="2">Added during 2023-24</th>
+      </tr>
+      <tr>
+        <th>Titles</th>
+        <th>Volumes</th>
+        <th>Titles</th>
+        <th>Volumes</th>
+      </tr>
+      <tr>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+    </table>
+
+    <p style="margin-top:15px;"><b>No. of Educational Journals</b></p>
+    <table>
+      <tr>
+        <th>Subscribed</th>
+        <th>Procured</th>
+      </tr>
+      <tr>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>OBSERVATIONS OF THE SUBJECT EXPERT</h2>
+  <p><b>Faculty Details:</b></p>
+  <p>Faculty required 1:15 (Teacher Student Ratio)</p>
+  <p>Cadre Ratio 1:2:6 (Professor: Assoc. Professor: Asst. Professor)</p>
+  <p style="font-size: 13px;">
+    (Of which, a minimum of 80% should be regular/full-time faculty and the remaining may be adjunct faculty/resource persons from industry).<br>
+    <b>Note:</b> Sanctioned students intake shall be considered for all (2) years for calculating Teacher: Student Ratio.
+  </p>
+
+  <!-- Faculty Table -->
+  <table>
+    <tr>
+      <th rowspan="2">Designation</th>
+      <th rowspan="2">Required</th>
+      <th colspan="2">Available</th>
+      <th rowspan="2">Deficiency</th>
+    </tr>
+    <tr>
+      <th>MGU Selection</th>
+      <th>Ad-hoc</th>
+    </tr>
+    <tr>
+      <td>Professors</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td>Associate Professors</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td>Assistant Professors</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+  </table>
+
+  <!-- Non-Teaching Staff -->
+  <p><b>Non-Teaching Staff:</b></p>
+  <table>
+    <tr>
+      <th>Department</th>
+      <th>Lab Assist.</th>
+      <th>Programmers</th>
+      <th>Lab Attenders</th>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <th>Required</th>
+      <th>Deficiency</th>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+  </table>
+
+  <!-- Accommodation -->
+  <table>
+    <tr>
+      <th rowspan="2">Particulars</th>
+      <th colspan="2">Accommodation Details</th>
+    </tr>
+    <tr>
+      <th>Number Available</th>
+      <th>Deficiency</th>
+    </tr>
+    <tr>
+      <td>Class Rooms</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td>Tutorial Rooms</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td>Laboratories</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td>Seminar Hall</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+    <tr>
+      <td>Staff Rooms</td>
+      <td><input type="number"></td>
+      <td><input type="number"></td>
+    </tr>
+  </table>
+
+  <!-- Laboratories -->
+  <p><b>List of Laboratories:</b></p>
+  <table>
+    <tr>
+      <th>S. No.</th>
+      <th>Name of the Laboratory</th>
+      <th>Area (Sq.M)</th>
+      <th>No. of Systems</th></tr>
+<tr>
+ <td><input type="text"></td>
+      <td><input type="number"></td>
+      <td><input type="text"></td>
+<td><input type="number"></td>
+</tr>
+<tr>
+      <th>Configuration</th>
+      <th>Batch Size</th>
+      <th>Remarks</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><input type="text"></td>
+      <td><input type="number"></td>
+      
+    
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><input type="text"></td>
+      <td><input type="number"></td>
+      
+      
+    </tr>
+
+  <tr>
+      <td>3</td>
+      <td><input type="text"></td>
+      <td><input type="number"></td>
+      
+      
+    </tr>
+  </table>
+
+  <!-- Recommendations -->
+  <h2>RECOMMENDATIONS OF THE INSPECTION COMMITTEE</h2>
+  <p>
+    The Inspection Committee recommends for grant of extension of provisional affiliation to
+    <input type="text" placeholder="College name"> to offer
+    <input type="text" placeholder="Course name"> course with an intake of
+    (<input type="number" style="width:80px;" placeholder="Intake">) for the academic year <b>2024-25</b>.
+  </p>
+
+  <div class="committee-sign">
+    <p><b>Upload Signatures of the Inspection Committee Members:</b></p>
+    <div class="sign-line"><span>1.</span><input type="file" accept="image/*"></div>
+    <div class="sign-line"><span>2.</span><input type="file" accept="image/*"></div>
+    <div class="sign-line"><span>3.</span><input type="file" accept="image/*"></div>
+    <div class="sign-line"><span>4.</span><input type="file" accept="image/*"></div>
+  </div>
+
+  <!-- Computational Facilities -->
+  <h3>Details of Computational facilities: As per AICTE norms 2023-24</h3>
+  <p class="note">(No. of PCs to students ratio – (1:4))</p>
+  <table>
+    <tr><th>Item</th><th>Description</th><th>Deficiency</th></tr>
+    <tr><td>Desktops</td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td>Server Machines</td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td>Software</td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td>Network Components</td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td>Internet Bandwidth</td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td>Printers / Others</td><td><input type="text"></td><td><input type="text"></td></tr>
+  </table>
+
+  <!-- Library -->
+  <table>
+    <tr><th colspan="2">Library</th></tr>
+    <tr><td>No. of Volumes</td><td><input type="text"></td></tr>
+    <tr><td>No. of Titles</td><td><input type="text"></td></tr>
+    <tr><td>No. of International Journals</td><td><input type="text"></td></tr>
+    <tr><td>No. of National Journals</td><td><input type="text"></td></tr>
+    <tr><td>No. of Desktops</td><td><input type="text"></td></tr>
+  </table>
+
+  <!-- Records -->
+  <table>
+    <tr><th>Records</th><th>Available / Not available</th><th>Remarks</th></tr>
+    <tr><td>Attendance</td><td><select><option>Available</option><option>Not Available</option></select></td><td><input type="text"></td></tr>
+    <tr><td>Sessional Marks</td><td><select><option>Available</option><option>Not Available</option></select></td><td><input type="text"></td></tr>
+    <tr><td>Lab. Manuals</td><td><select><option>Available</option><option>Not Available</option></select></td><td><input type="text"></td></tr>
+    <tr><td>Lab Records</td><td><select><option>Available</option><option>Not Available</option></select></td><td><input type="text"></td></tr>
+    <tr><td>Assignments</td><td><select><option>Available</option><option>Not Available</option></select></td><td><input type="text"></td></tr>
+  </table>
+
+  <!-- Observations -->
+  <label><b>Observations / Suggestions:</b></label>
+  <textarea rows="4" placeholder="Type your observations or suggestions here..."></textarea>
+
+
+<!-- Name & Signature of Subject Expert -->
+<h3>Name & Signature of Subject Expert</h3>
+<div class="sign-line">
+<input type="text" placeholder="Enter name of subject expert">
+<input type="file" accept="image/png">
+</div>
+<div class="toolbar">
+       <button class="action-btn clear-btn" id="clearBtn">
+                    <i class="fas fa-eraser"></i> Clear Form
+                </button>
+                <button class="action-btn export-btn" id="exportBtn">
+                    <i class="fas fa-file-export"></i> Export JSON
+                </button>
+                <button class="action-btn import-btn" id="importBtn">
+                    <i class="fas fa-file-import"></i> Import JSON
+                </button>
+                <button class="action-btn print-btn" id="printBtn">
+                    <i class="fas fa-print"></i> Print / Save as PDF
+                </button>
+    </div>
+
+
+  <!-- Submit Button -->
+  <div style="display:flex;align-items:center;gap:12px;margin-top:16px;">
+    <button type="button" class="btn" id="submitBtn">Submit</button>
+    <div id="statusMessage" aria-live="polite" style="font-weight:600;color:#333;"></div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script>
+// Helper: simple notification
+// Show status text in-page (replaces blocking alert for the submit flow)
+function showNotification(msg, type='info'){
+  const el = document.getElementById('statusMessage');
+  if (!el) {
+    // fallback to alert if element missing
+    alert(msg);
+    return;
+  }
+
+  el.textContent = msg;
+  el.style.color = type === 'error' ? '#b00020' : type === 'success' ? '#107a3b' : '#333';
+}
+
+function clearNotification(){
+  const el = document.getElementById('statusMessage');
+  if (el) el.textContent = '';
+}
+
+async function submitReport() {
+  try {
+    // Gather basic fields using their new IDs for robustness
+    const container = document.querySelector('.container');
+    
+    const collegeName = document.getElementById('collegeName')?.value || null;
+    const collegeCode = document.getElementById('collegeCode')?.value || null;
+    const course = document.getElementById('course')?.value || null;
+    const inspectionDate = document.getElementById('inspectionDate')?.value || null;
+
+    // Build a comprehensive formData object from all inputs for backup/archive
+    const formData = {};
+    const inputs = Array.from(container.querySelectorAll('input, select, textarea'));
+    inputs.forEach((el, idx) => {
+      const key = el.name || el.id || `field_${idx}`;
+      if (el.type === 'file') {
+        formData[key] = null; // Don't store file content
+      } else {
+        formData[key] = el.value;
+      }
+    });
+
+    // Create the main payload
+    const payload = {
+      type: 'inspection',
+      collegeName: collegeName,
+      collegeCode: collegeCode,
+      course: course,
+      inspectionDate: inspectionDate,
+      submittedAt: new Date().toISOString(),
+      formData: formData
+    };
+
+    // Attach submitter info (if logged in)
+    try {
+      const currentUser = JSON.parse(localStorage.getItem('user') || 'null');
+      if (currentUser && currentUser.email) {
+        payload.submittedBy = currentUser.email;
+        payload.submittedByName = currentUser.name || null;
+      }
+    } catch (e) {
+      // ignore if user is not logged in or localStorage is unavailable
+    }
+
+    // This block handles the actual submission.
+    // It first tries to submit to a primary database endpoint. If that fails, it falls back to a file-based save.
+    // This logic seems to be from the original file and is preserved.
+    if (typeof makeRequest === 'function') {
+        showNotification('Submitting inspection report to server (DB)...', 'info');
+
+        // Prepare a payload specifically for the database endpoint, matching its expected schema.
+        const dbPayload = {
+          type: 'inspection',
+          collegeName: payload.collegeName,
+          collegeCode: payload.collegeCode,
+          Programme: payload.course, // Ensure 'Programme' matches the DB schema
+          submittedBy: payload.submittedBy || null,
+          submittedByName: payload.submittedByName || null,
+          academicYear: payload.formData.academicYear || '2024-25', // Default if not specified
+          submissionDate: payload.submittedAt,
+          formData: payload.formData,
+          status: 'pending_review'
+        };
+
+        // Try DB submit first with a timeout
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        let dbResult = null;
+        try {
+          const resp = await fetch(API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.SUBMIT_ACADEMIC_FORM, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dbPayload), signal: controller.signal
+          });
+          clearTimeout(timeout);
+          dbResult = await resp.json();
+        } catch (err) {
+          clearTimeout(timeout);
+          if (err && err.name === 'AbortError') {
+            console.error('DB submit timed out');
+            showNotification('DB submit timed out. Falling back to file save...', 'error');
+          } else {
+            console.error('DB submit failed:', err);
+            showNotification('DB submit failed. Falling back to file save...', 'error');
+          }
+        }
+
+        if (dbResult && dbResult.success) {
+          showNotification('Inspection submitted to DB successfully!', 'success');
+          // Fire-and-forget file backup (do not block the user)
+          try {
+            const emailForFile = (payload.submittedBy && payload.submittedBy.length) ? payload.submittedBy : `inspection_${Date.now()}@local`;
+            const savePayload = { email: emailForFile, formData: payload.formData, formType: 'inspection' };
+            fetch(API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.SAVE_ACADEMIC_FORM, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(savePayload) }).catch(e => console.warn('File backup save failed:', e));
+          } catch (e) {
+            console.warn('Error triggering file backup:', e);
+          }
+          // Redirect or notify parent window
+          try {
+            if (window.top && window.top !== window.self) {
+              window.parent.postMessage({ type: 'inspection_submitted', status: 'success', message: 'Inspection submitted successfully' }, '*');
+            } else {
+              window.location.href = 'inspectdash.html#overview';
+            }
+          } catch (e) {
+            window.location.href = 'inspectdash.html#overview';
+          }
+          return;
+        }
+
+        // If DB submit didn't succeed, try saving to file as primary fallback
+        showNotification('Saving inspection to file (fallback)...', 'info');
+        const fileController = new AbortController();
+        const fileTimeout = setTimeout(() => fileController.abort(), 10000);
+        try {
+          const emailForFile = (payload.submittedBy && payload.submittedBy.length) ? payload.submittedBy : `inspection_${Date.now()}@local`;
+          // For the fallback, the payload includes the full form data which now contains the required fields.
+          const savePayload = { email: emailForFile, formData: payload.formData, formType: 'inspection' };
+          const resp = await fetch(API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.SAVE_ACADEMIC_FORM, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(savePayload), signal: fileController.signal });
+          clearTimeout(fileTimeout);
+          const json = await resp.json();
+          if (json && json.success) {
+            showNotification('Inspection saved to file storage successfully!', 'success');
+            // Redirect or notify parent
+            try {
+              if (window.top && window.top !== window.self) {
+                window.parent.postMessage({ type: 'inspection_submitted', status: 'success', message: 'Inspection submitted successfully' }, '*');
+              } else {
+                window.location.href = 'inspectdash.html#overview';
+              }
+            } catch (e) {
+              window.location.href = 'inspectdash.html#overview';
+            }
+            return;
+          }
+          showNotification((json && json.message) ? `File save response: ${json.message}` : 'File save failed', 'error');
+        } catch (err) {
+          clearTimeout(fileTimeout);
+          if (err && err.name === 'AbortError') {
+            showNotification('File save timed out. Please try again.', 'error');
+          } else {
+            console.error('File save failed:', err);
+            showNotification('Unable to reach server to save form. Please ensure the backend is running.', 'error');
+          }
+        }
+        return;
+      }
+  } catch (err) {
+    console.error('Error submitting inspection form:', err);
+    showNotification('Failed to submit inspection: ' + (err.message || 'Unknown error'), 'error');
+  }
+}
+
+document.getElementById('submitBtn').addEventListener('click', submitReport);
+</script>
+
+</body>
+</html>

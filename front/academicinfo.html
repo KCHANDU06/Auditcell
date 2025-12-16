@@ -1,0 +1,1330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ACADEMIC INFORMATION</title>
+  <style>
+    /* Fonts and global */
+    @media print {
+      .no-print { display: none; }
+    }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: #fff;
+      color: #111;
+      margin: 20px;
+      line-height: 1.35;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
+    header h2 {
+      margin: 4px 0 8px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    form {
+      max-width: 1000px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      padding: 14px;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+
+    section {
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+    .section-title {
+      background: #f2f2f2;
+      padding: 6px 10px;
+      border-left: 4px solid #666;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .small {
+      font-size: 13px;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .row {
+      margin-bottom: 8px;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    textarea { min-height: 70px; resize: vertical; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+    }
+    table thead th,
+    table tbody td {
+      border: 1px solid #bbb;
+      padding: 6px;
+      font-size: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table thead th {
+      background: #efefef;
+      font-weight: 700;
+    }
+    .actions {
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      align-items:center;
+    }
+    .btn {
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .btn-primary { background: #2b6cb0; color: #fff; }
+    .btn-secondary { background: #e2e8f0; color: #111; }
+    .btn-danger { background: #e53e3e; color: #fff; }
+    .small-note {
+      font-size: 12px;
+      color: #555;
+    }
+
+    /* Signature boxes */
+    .signature-box {
+      border: 1px dashed #666;
+      width: 300px;
+      height: 80px;
+      margin-bottom: 6px;
+      padding: 6px;
+    }
+
+    /* Responsive */
+    @media(max-width:700px){
+      .grid { grid-template-columns: 1fr; }
+      .signature-box { width: 100%; }
+    }
+
+    /* Minor footer */
+    footer { text-align:center; font-size:12px; color:#666; margin-top:10px; }
+    
+    /* Notification styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      z-index: 1000;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .notification.success { background: #4CAF50; }
+    .notification.error { background: #f44336; }
+    .notification.info { background: #2196F3; }
+    
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .loading-spinner {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Notification System -->
+  <div id="notification" class="notification"></div>
+  
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner">
+      <h3>Submitting Form...</h3>
+      <p>Please wait while we process your submission</p>
+    </div>
+  </div>
+
+  <header>
+    <h1>ACADEMIC INFORMATION</h1>
+    <h2>MAHATMA GANDHI UNIVERSITY<br/>NALGONDA-508254 (TELANGANA)</h2>
+    <div class="small-note">Academic Year: 2024–25 &nbsp; Last saved: —</div>
+  </header>
+
+  <form id="academicForm" autocomplete="off" spellcheck="false">
+    <!-- Top details -->
+    <section>
+      <div class="grid">
+        <div>
+          <label>College Name: <span style="color:#d00">*</span>
+            <input type="text" id="collegeName" name="collegeName" placeholder="Enter your College Name" required />
+          </label>
+        </div>
+        <div>
+          <label>College Code: <span style="color:#d00">*</span>
+            <input type="text" id="collegeCode" name="collegeCode" placeholder="Enter your College Code" required />
+          </label>
+        </div>
+        <div>
+          <label>Programme: <span style="color:#d00">*</span>
+            <input type="text" id="programme" name="programme" placeholder="Enter your programme" required />
+          </label>
+        </div>
+        <div>
+          <label>Intake: <span style="color:#d00">*</span>
+            <input type="text" id="intake" name="intake" placeholder="Enter your intake" required />
+          </label>
+        </div>
+        <div>
+          <label>Date of Inspection:
+            <input type="date" id="inspectionDate" name="inspectionDate" />
+          </label>
+        </div>
+        <div>
+          <label>Challan No.:
+            <input type="text" id="challanNo" name="challanNo" placeholder="Enter Challan number" />
+          </label>
+        </div>
+        <div>
+          <label>Challan Date:
+            <input type="date" id="challanDate" name="challanDate" />
+          </label>
+        </div>
+        <div>
+          <label>Amount:
+            <input type="text" id="amount" name="amount" placeholder="Enter amount" />
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <label>"Whether Compliance report Submitted for the Academic Year 2024-25"
+          <select id="complianceSubmitted" name="complianceSubmitted">
+            <option value="">Select…</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </label>
+      </div>
+
+      <div style="margin-top:8px; font-size:13px; color:#333;">
+        <strong>Required to Submit:</strong> <span style="color:#d00">College Name, College Code, Programme, Intake, Email</span>
+      </div>
+    </section>
+
+    <!-- 1. Name of the College with Postal Address -->
+    <section>
+      <div class="section-title">1. Name of the College with Postal Address</div>
+      <div class="grid">
+        <div>
+          <label>Postal Address:
+            <textarea id="collegeAddress" name="collegeAddress" placeholder="Enter postal address"></textarea>
+          </label>
+        </div>
+        <div>
+          <label>Landline:
+            <input type="text" id="landline" name="landline" />
+          </label>
+          <label>Mobile:
+            <input type="text" id="mobile" name="mobile" />
+          </label>
+          <label>Email ID:
+            <input type="email" id="collegeEmail" name="collegeEmail" required />
+          </label>
+          <label>Website:
+            <input type="text" id="website" name="website" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Society details -->
+    <section>
+      <div class="section-title">2. Name of the Society / Registration No. & Address</div>
+      <div class="grid">
+        <div>
+          <label>Society Name & Registration No. / Address:
+            <textarea id="societyInfo" name="societyInfo" placeholder="Enter society name, registration no. & address"></textarea>
+          </label>
+        </div>
+        <div>
+          <label>Phone Nos.:
+            <input type="text" id="societyPhone" name="societyPhone" />
+          </label>
+          <label>Email ID:
+            <input type="email" id="societyEmail" name="societyEmail" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Secretary -->
+    <section>
+      <div class="section-title">3. Name of Secretary / Correspondent</div>
+      <div class="grid">
+        <div>
+          <label>Name:
+            <input type="text" id="secretaryName" name="secretaryName" />
+          </label>
+          <label>Telephone No.:
+            <input type="text" id="secretaryTelephone" name="secretaryTelephone" />
+          </label>
+        </div>
+        <div>
+          <label>Email ID:
+            <input type="email" id="secretaryEmail" name="secretaryEmail" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Principal details -->
+    <section>
+      <div class="section-title">4. Particulars of Principal</div>
+      <div class="grid">
+        <div>
+          <label>a) Name of the Principal:
+            <input type="text" id="principalName" name="principalName" />
+          </label>
+          <label>b) Qualifications:
+            <input type="text" id="principalQualifications" name="principalQualifications" />
+          </label>
+          <label>c) Whether appointed through MGU Selection Committee:
+            <select id="principalAppointedMGU" name="principalAppointedMGU">
+              <option value="">Select…</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>d) Date of Birth:
+            <input type="date" id="principalDOB" name="principalDOB" />
+          </label>
+          <label>e) Mobile No.:
+            <input type="text" id="principalMobile" name="principalMobile" />
+          </label>
+          <label>f) Email ID:
+            <input type="email" id="principalEmail" name="principalEmail" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 & 6 -->
+    <section>
+      <div class="section-title">5. Nature of accommodation (Ownership/Lease)</div>
+      <div class="grid">
+        <div>
+          <label>Nature of accommodation:
+            <input type="text" id="accommodationNature" name="accommodationNature" placeholder="Ownership/Lease" />
+          </label>
+          <label>Document Nos.:
+            <input type="text" id="accommodationDocs" name="accommodationDocs" />
+          </label>
+        </div>
+        <div>
+          <label>6. Land area details</label>
+          <label>Actual Land area:
+            <input type="text" id="actualLandArea" name="actualLandArea" />
+          </label>
+          <label>Required Land area:
+            <input type="text" id="requiredLandArea" name="requiredLandArea" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 - 15 -->
+    <section>
+      <div class="section-title">7–15. Establishment, Programmes & Nominees</div>
+      <div class="grid">
+        <div>
+          <label>7. Year of Establishment:
+            <input type="text" id="yearEstablishment" name="yearEstablishment" />
+          </label>
+          <label>8. Any Other Programmes run by the College:
+            <textarea id="otherProgrammes" name="otherProgrammes"></textarea>
+          </label>
+          <label>9. AICTE permission letter No. & Date (2024-25):
+            <input type="text" id="aictePermission" name="aictePermission" placeholder="No. & Date" />
+          </label>
+          <label>10. State Govt. G.O. No. & Date (2024-25):
+            <input type="text" id="stateGONo" name="stateGONo" placeholder="No. & Date" />
+          </label>
+        </div>
+        <div>
+          <label>11. MGU Affiliation Order No. & Date (2024-25):
+            <input type="text" id="mguAffiliation" name="mguAffiliation" />
+          </label>
+          <label>12. i) Any other institutions in same premises?
+            <select id="otherInstitutions" name="otherInstitutions"><option value="">Select…</option><option value="Yes">Yes</option><option value="No">No</option></select>
+          </label>
+          <label>ii) Permission from AICTE obtained?
+            <select id="aicteObtained" name="aicteObtained"><option value="">Select…</option><option value="Yes">Yes</option><option value="No">No</option></select>
+          </label>
+          <label>13. Status of the College:
+            <input type="text" id="collegeStatus" name="collegeStatus" placeholder="e.g. Minority / Co-Education" />
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <label>14. Name of University nominee on Governing Body with:
+          <textarea id="univNomineeGoverning" name="univNomineeGoverning" placeholder="Name & Period From dd-mm-yyyy To dd-mm-yyyy"></textarea>
+        </label>
+        <label>15. Name of University nominee on the Selection Committee with:
+          <textarea id="univNomineeSelection" name="univNomineeSelection" placeholder="Name & Period From dd-mm-yyyy To dd-mm-yyyy"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <!-- 16 - 23 -->
+    <section>
+      <div class="section-title">16–23. Meetings, Hours, Workload, Pay & Facilities</div>
+      <div class="grid">
+        <div>
+          <label>16. Number of the Governing Body meetings convened during the last academic year 2024-25 with University nominees:
+            <input type="text" id="governingMeetings" name="governingMeetings" />
+          </label>
+          <label>17. Working Hours of the College:
+            <input type="text" id="workingHours" name="workingHours" />
+          </label>
+          <label>18. Work load statement Department-wise, Teacher-wise (to be enclosed):
+            <textarea id="workloadStatement" name="workloadStatement"></textarea>
+          </label>
+        </div>
+        <div>
+          <label>19. Time table for each course showing:
+            <textarea id="timeTable" name="timeTable" placeholder="Room No., Name of Class, Name of Teacher in each period"></textarea>
+          </label>
+          <label>20. Whether revised pay scales of VII pay Commission are paid to the staff:
+            <select id="payScalesPaid" name="payScalesPaid"><option value="">Select…</option><option value="Yes">Yes</option><option value="No">No</option></select>
+          </label>
+          <label>21. Details of Salary paid: (Acquaintance Register to be Produced, Enclose the Bank Statement)
+            <textarea id="salaryDetails" name="salaryDetails" placeholder="Maximum Salary / details"></textarea>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;" class="grid">
+        <div>
+          <label>22. CC Cameras/Aadhaar based Biometric attendance connected with Vidyawaan Portal:
+            <select id="ccCameras" name="ccCameras"><option value="">Select…</option><option value="Yes">Yes</option><option value="No">No</option></select>
+          </label>
+          <label>23. Digital Library:
+            <select id="digitalLibrary" name="digitalLibrary"><option value="">Select…</option><option value="Yes">Yes</option><option value="No">No</option></select>
+          </label>
+        </div>
+        <div>
+          <label>24. Wi-fi Internet Facility:
+            <select id="wifiFacility" name="wifiFacility"><option value="">Select…</option><option value="Yes">Yes</option><option value="No">No</option></select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programme Details -->
+    <section>
+      <div class="section-title">Programme Details</div>
+      <label>Programme details - Year of Starting, Sanctioned Intake, Actual Strength of Students (Programme-wise)</label>
+
+      <table id="programmeTable" aria-label="Programme Details Table">
+        <thead>
+          <tr>
+            <th>Name of the Programme</th>
+            <th>Year of Starting</th>
+            <th>Sanctioned Intake</th>
+            <th>I Year</th>
+            <th>II Year</th>
+            <th>III Year</th>
+            <th>IV Year</th>
+            <th>Mode of Admission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" name="prog_name_1" /></td>
+            <td><input type="text" name="prog_year_1" /></td>
+            <td><input type="text" name="prog_sanctioned_1" /></td>
+            <td><input type="text" name="prog_i_1" /></td>
+            <td><input type="text" name="prog_ii_1" /></td>
+            <td><input type="text" name="prog_iii_1" /></td>
+            <td><input type="text" name="prog_iv_1" /></td>
+            <td><input type="text" name="prog_mode_1" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-bottom:8px;">
+        <button type="button" id="addProgrammeRow" class="btn btn-secondary">Add Row</button>
+      </div>
+    </section>
+
+    <!-- Intake / quotas table (as from PDF) -->
+    <section>
+      <div class="section-title">Intake / Admission details (Convener/Management/Minority)</div>
+      <table id="admissionTable">
+        <thead>
+          <tr>
+            <th>Sanctioned intake for first year</th>
+            <th>First Year students admitted under Convener Quota</th>
+            <th>Management Quota</th>
+            <th>Minority (SW-II/III)</th>
+            <th>Intake Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" name="admission_sanctioned_1" /></td>
+            <td><input type="text" name="admission_convener_1" /></td>
+            <td><input type="text" name="admission_management_1" /></td>
+            <td><input type="text" name="admission_minority_1" /></td>
+            <td><input type="text" name="admission_count_1" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-bottom:8px;">
+        <button type="button" id="addAdmissionRow" class="btn btn-secondary">Add Row</button>
+        <button type="button" class="btn btn-danger deleteAdmissionRow">Delete Row</button>
+      </div>
+    </section>
+
+    <!-- Faculty Details -->
+    <section>
+      <div class="section-title">Faculty Details (Click to Expand)</div>
+
+      <table id="facultyReqTable">
+        <thead>
+          <tr>
+            <th>Designation</th>
+            <th>Required (as per norms)</th>
+            <th>Available (MGU Selection)</th>
+            <th>Available (Ad-hoc)</th>
+            <th>Total Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Professors</td><td><input type="text" name="req_professors" /></td><td><input type="text" name="av_mgu_professors" /></td><td><input type="text" name="av_ad_professors" /></td><td><input type="text" name="total_professors" /></td></tr>
+          <tr><td>Associate Professors</td><td><input type="text" name="req_assoc" /></td><td><input type="text" name="av_mgu_assoc" /></td><td><input type="text" name="av_ad_assoc" /></td><td><input type="text" name="total_assoc" /></td></tr>
+          <tr><td>Assistant Professors</td><td><input type="text" name="req_assistant" /></td><td><input type="text" name="av_mgu_assistant" /></td><td><input type="text" name="av_ad_assistant" /></td><td><input type="text" name="total_assistant" /></td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:8px;">
+        <label>Particulars of Principal and Teaching Faculty</label>
+        <table id="teacherTable">
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>Name of the Teacher</th>
+              <th>Designation</th>
+              <th>Qualification</th>
+              <th>Date of Birth</th>
+              <th>Total Years of Exp.</th>
+              <th>Through MGU Selection</th>
+              <th>Management</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="teacher_name_1" /></td>
+              <td><input type="text" name="teacher_designation_1" /></td>
+              <td><input type="text" name="teacher_qual_1" /></td>
+              <td><input type="date" name="teacher_dob_1" /></td>
+              <td><input type="text" name="teacher_exp_1" /></td>
+              <td><input type="text" name="teacher_mgu_1" /></td>
+              <td><input type="text" name="teacher_mgmt_1" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-bottom:8px;">
+          <button type="button" id="addTeacherRow" class="btn btn-secondary">Add Row</button>
+          <button type="button" id="deleteTeacherRow" class="btn btn-secondary">Delete Row</button>
+        </div>
+      </div>
+
+      <div>
+        <label>Non-Teaching Staff - Programme / Lab Asst. / Programmers / Lab Attenders / Total Required</label>
+        <table id="nonTeachingTable">
+          <thead>
+            <tr>
+              <th>Particular</th>
+              <th>Programme</th>
+              <th>Lab Asst.</th>
+              <th>Programmers</th>
+              <th>Lab Attenders</th>
+              <th>Total Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="nonprog_1" /></td>
+              <td><input type="text" name="nonlabasst_1" /></td>
+              <td><input type="text" name="nonprogmr_1" /></td>
+              <td><input type="text" name="nonlabatt_1" /></td>
+              <td><input type="text" name="nontotal_1" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- Accommodation Details -->
+    <section>
+      <div class="section-title">Accommodation Details</div>
+      <table>
+        <thead>
+          <tr><th>Particulars</th><th>Number</th><th>Area (Sq. m) of each</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Class Rooms</td>
+            <td><input type="text" name="acc_classrooms_number" /></td>
+            <td><input type="text" name="acc_classrooms_area" /></td>
+          </tr>
+          <tr>
+            <td>Tutorial Rooms</td>
+            <td><input type="text" name="acc_tutorial_number" /></td>
+            <td><input type="text" name="acc_tutorial_area" /></td>
+          </tr>
+          <tr>
+            <td>Seminar Hall</td>
+            <td><input type="text" name="acc_seminar_number" /></td>
+            <td><input type="text" name="acc_seminar_area" /></td>
+          </tr>
+          <tr>
+            <td>Computer Lab</td>
+            <td><input type="text" name="acc_comp_number" /></td>
+            <td><input type="text" name="acc_comp_area" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:6px;">
+        <label>Computer Lab. Area (in Sq. mts.) - Equipment available / Lab. Class conducted (as per syllabus)</label>
+        <table id="compLabTable">
+          <thead>
+            <tr><th>S. No.</th><th>Computer Lab. Area (in Sq. mts.)</th><th>Equipment available / Description (Configuration)</th><th>Lab. Class conducted (as per syllabus) / Batch Size</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="complab_area_1" /></td>
+              <td><input type="text" name="complab_equip_1" /></td>
+              <td><input type="text" name="complab_batch_1" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-bottom:8px;">
+          <button type="button" id="addCompLabRow" class="btn btn-secondary">Add Row</button>
+          <button type="button" id="deleteCompLabRow" class="btn btn-secondary">Delete Row</button>
+        </div>
+      </div>
+
+      <div style="margin-top:6px;">
+        <label>Computational Facilities (As per AICTE norms 2018-19 : 1:6)</label>
+        <table id="computationalTable">
+          <thead>
+            <tr><th>Item</th><th>Description (Configuration)</th><th>Quantity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Desktops</td><td><input type="text" name="comp_desktops_desc" /></td><td><input type="text" name="comp_desktops_qty" /></td></tr>
+            <tr><td>Server Machines</td><td><input type="text" name="comp_server_desc" /></td><td><input type="text" name="comp_server_qty" /></td></tr>
+            <tr><td>Licensed software</td><td><input type="text" name="comp_soft_desc" /></td><td><input type="text" name="comp_soft_qty" /></td></tr>
+            <tr><td>Network components (LAN/WAN)</td><td><input type="text" name="comp_net_desc" /></td><td><input type="text" name="comp_net_qty" /></td></tr>
+            <tr><td>Internet Band width</td><td><input type="text" name="comp_internet_desc" /></td><td><input type="text" name="comp_internet_qty" /></td></tr>
+            <tr><td>Printers/Other equipment</td><td><input type="text" name="comp_printers_desc" /></td><td><input type="text" name="comp_printers_qty" /></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Library -->
+    <section>
+      <div class="section-title">Library</div>
+      <div class="grid">
+        <div>
+          <label>Library Total area (in Sq. ft.):
+            <input type="text" id="libraryArea" name="libraryArea" />
+          </label>
+          <label>Librarian: Name & Qualifications of the Librarian
+            <input type="text" id="librarianInfo" name="librarianInfo" />
+          </label>
+        </div>
+        <div>
+          <label>Library Facilities - Type / Number/Quantity</label>
+          <label>Volumes:
+            <input type="text" id="libVolumes" name="libVolumes" />
+          </label>
+          <label>Titles:
+            <input type="text" id="libTitles" name="libTitles" />
+          </label>
+          <label>Books added during the year 2024-25:
+            <input type="text" id="booksAdded" name="booksAdded" />
+          </label>
+          <label>National Journals subscribed during 2024-25:
+            <input type="text" id="nationalJournals" name="nationalJournals" />
+          </label>
+          <label>International Journals subscribed during 2024-25:
+            <input type="text" id="internationalJournals" name="internationalJournals" />
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top:6px;">
+        <label>Total amount spent on Books during the year 2024-25:
+          <input type="text" id="amountBooks" name="amountBooks" />
+        </label>
+        <label>Total amount spent on Journals during the year 2024-25:
+          <input type="text" id="amountJournals" name="amountJournals" />
+        </label>
+        <label>Reading Room capacity:
+          <input type="text" id="readingCapacity" name="readingCapacity" />
+        </label>
+        <label>Desktops:
+          <input type="text" id="libraryDesktops" name="libraryDesktops" />
+        </label>
+        <label>E-Books:
+          <input type="text" id="eBooks" name="eBooks" />
+        </label>
+        <label>E-Journals:
+          <input type="text" id="eJournals" name="eJournals" />
+        </label>
+        <label>DELNET Membership details:
+          <input type="text" id="delnetDetails" name="delnetDetails" />
+        </label>
+      </div>
+    </section>
+
+    <!-- Administrative Area -->
+    <section>
+      <div class="section-title">Administrative Area</div>
+      <table>
+        <thead>
+          <tr><th>Particulars</th><th>Area (in Sq. ft.)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Principal office</td><td><input type="text" name="area_principal_office" /></td></tr>
+          <tr><td>Administrative office</td><td><input type="text" name="area_admin_office" /></td></tr>
+          <tr><td>Exams Control office</td><td><input type="text" name="area_exams_office" /></td></tr>
+          <tr><td>Placement office</td><td><input type="text" name="area_placement_office" /></td></tr>
+          <tr><td>Central store</td><td><input type="text" name="area_central_store" /></td></tr>
+          <tr><td>Security</td><td><input type="text" name="area_security" /></td></tr>
+          <tr><td>Staff room</td><td><input type="text" name="area_staffroom" /></td></tr>
+          <tr><td>Sports room</td><td><input type="text" name="area_sportsroom" /></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Amenities -->
+    <section>
+      <div class="section-title">Amenities</div>
+      <label>Particulars Available/Not available</label>
+      <table>
+        <thead>
+          <tr><th>Particulars</th><th>Available / Not available</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Boys Common Room</td><td><select name="amen_boys"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Girls Common Room</td><td><select name="amen_girls"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Cafeteria</td><td><select name="amen_cafe"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Backup Electric Supply/Generator</td><td><select name="amen_backup"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Safety provisions including fire and other calamities</td><td><select name="amen_safety"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Transport facility and parking area</td><td><select name="amen_transport"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Drinking water facility</td><td><select name="amen_water"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Separate Toilets for Boys and Girls</td><td><select name="amen_toilets"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>First aid cum sick room</td><td><select name="amen_firstaid"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Display of Courses and approved intake at the entrance of the college</td><td><select name="amen_display"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+          <tr><td>Permanent Name Board of the college (enclose photo)</td><td><select name="amen_nameboard"><option value="">Select…</option><option>Available</option><option>Not available</option></select></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Result & Placements -->
+    <section>
+      <div class="section-title">Result Analysis & Placements</div>
+      <label>Result Analysis (Year wise - Pass Percentage for Last 3 Years)</label>
+      <table>
+        <thead><tr><th>Course</th><th>I Year</th><th>II Year</th><th>III Year</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" name="result_course_1" /></td>
+            <td><input type="text" name="result_i_1" /></td>
+            <td><input type="text" name="result_ii_1" /></td>
+            <td><input type="text" name="result_iii_1" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <label>Placements - Name of the Company / No. of Students placed</label>
+      <table>
+        <thead><tr><th>Name of the Company</th><th>No. of Students placed</th></tr></thead>
+        <tbody>
+          <tr><td><input type="text" name="placement_company_1" /></td><td><input type="text" name="placement_count_1" /></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Games, Seminars -->
+    <section>
+      <div class="section-title">Games, Sports, Seminars / Conferences / Workshops</div>
+      <label>Details of Games & Sports and other curricular activities</label>
+      <textarea name="gamesDetails" placeholder="Enter details of games, sports and curricular activities"></textarea>
+
+      <label style="margin-top:8px;">Seminars / Conferences / Workshops (organized/attended by Faculty)</label>
+      <table>
+        <thead><tr><th>S.No.</th><th>Particulars</th><th>Organized</th><th>Attended</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><input type="text" name="seminar_particular_1" /></td>
+            <td><input type="text" name="seminar_org_1" /></td>
+            <td><input type="text" name="seminar_att_1" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Anti-Ragging -->
+    <section>
+      <div class="section-title">Anti-Ragging</div>
+      <label>Has the College appointed an Anti-Ragging Committee?
+        <select name="antiRaggingAppointed"><option value="">Select…</option><option>Yes</option><option>No</option></select>
+      </label>
+      <label>If yes, upload/attach a copy of the Constitution and list of members. (Attach separately)</label>
+      <label>Report of the Anti-Ragging Committee for the year:
+        <textarea name="antiRaggingReport"></textarea>
+      </label>
+      <label>Summary of activities, meetings held, cases (if any), outcomes…
+        <textarea name="antiRaggingSummary"></textarea>
+      </label>
+      <label>Measures taken by the College to prevent ragging (Awareness programs, signage, helpline, orientation, undertakings from students, CCTV, patrolling, counseling…)
+        <textarea name="antiRaggingMeasures"></textarea>
+      </label>
+    </section>
+
+    <!-- RTI Act -->
+    <section>
+      <div class="section-title">RTI Act</div>
+      <label>Has the College appointed PIO and APIO?
+        <select name="rtiPIOAPIO"><option value="">Select…</option><option>Yes</option><option>No</option></select>
+      </label>
+      <label>If yes, mention the names below and enclose copies of notifications.</label>
+      <label>Names of PIO and APIO
+        <textarea name="rtiNames" placeholder="Public Information Officer (PIO): …  Assistant Public Information Officer (APIO): …"></textarea>
+      </label>
+    </section>
+
+    <!-- Women Protection Cell -->
+    <section>
+      <div class="section-title">Women Protection Cell</div>
+      <label>Has the College appointed a Women Protection Cell?
+        <select name="womenCellAppointed"><option value="">Select…</option><option>Yes</option><option>No</option></select>
+      </label>
+      <label>If yes, enclose copy of the constitution/notification.
+        <textarea name="womenCellDetails"></textarea>
+      </label>
+      <label>Details / Activities
+        <textarea name="womenCellActivities"></textarea>
+      </label>
+    </section>
+
+    <!-- Grievance Redressal -->
+    <section>
+      <div class="section-title">Grievance Redressal Committee</div>
+      <label>Has the College appointed a Grievance Redressal Committee?
+        <select name="grievanceAppointed"><option value="">Select…</option><option>Yes</option><option>No</option></select>
+      </label>
+      <label>If yes, enclose copy of the constitution.
+        <textarea name="grievanceDetails"></textarea>
+      </label>
+      <label>Details / Activities
+        <textarea name="grievanceActivities"></textarea>
+      </label>
+    </section>
+
+    <!-- Any Other Information -->
+    <section>
+      <div class="section-title">Any Other Information</div>
+      <label>Add any additional committees, cells, or noteworthy compliance initiatives.
+        <textarea name="otherInformation"></textarea>
+      </label>
+
+      <label>Committee Members (Optional List)</label>
+      <table>
+        <thead><tr><th>#</th><th>Name & Role</th><th>Department</th><th>Phone</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><input type="text" name="comm_name_1" /></td><td><input type="text" name="comm_dept_1" /></td><td><input type="text" name="comm_phone_1" /></td></tr>
+          <tr><td>2</td><td><input type="text" name="comm_name_2" /></td><td><input type="text" name="comm_dept_2" /></td><td><input type="text" name="comm_phone_2" /></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Signatures -->
+    <section>
+      <div class="grid">
+        <div>
+          <label>Signature of the Secretary / Correspondent (Sign within the box)</label>
+          <div class="signature-box" id="sigSecretary"></div>
+          <label>Name: <input type="text" name="sig_secretary_name" /></label>
+          <label>Date: <input type="date" name="sig_secretary_date" /></label>
+        </div>
+        <div>
+          <label>Signature of the Principal (Sign within the box)</label>
+          <div class="signature-box" id="sigPrincipal"></div>
+          <label>Name: <input type="text" name="sig_principal_name" /></label>
+          <label>Date: <input type="date" name="sig_principal_date" /></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form actions -->
+    <section class="no-print">
+      <div class="actions">
+        <button type="button" id="saveBtn" class="btn btn-primary">Save Form</button>
+        <button type="button" id="clearBtn" class="btn btn-danger">Clear Form</button>
+        <button type="button" id="exportBtn" class="btn btn-secondary">Export JSON</button>
+        <button type="button" id="importBtn" class="btn btn-secondary">Import JSON</button>
+        <button type="button" id="printBtn" class="btn btn-secondary">Print / Save as PDF</button>
+        <input type="file" id="importFile" accept=".json" style="display:none" />
+        <div style="margin-left:auto; font-size:13px; color:#444;">
+          <span id="statusText">Not saved</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Generated form • 2024–25 &nbsp;&nbsp; 
+      <button type="button" id="submitForm" class="btn btn-primary no-print" style="margin-left:10px;">Submit to Admin Dashboard</button>
+    </footer>
+  </form>
+
+  <script>
+  // Load API config and set a flag when ready
+  // This helps pages that may reference makeRequest/API_CONFIG to know it's available.
+  const _script = document.createElement('script');
+  _script.src = 'js/config.js';
+  _script.onload = function() { window.API_CONFIG_LOADED = true; };
+  _script.onerror = function() { console.error('Failed to load js/config.js'); window.API_CONFIG_LOADED = false; };
+  document.head.appendChild(_script);
+    // Key used for localStorage
+    const STORAGE_KEY = 'academic_information_2024_25';
+
+    // Utilities
+    function qs(selector, root=document) { return root.querySelector(selector); }
+    function qsa(selector, root=document) { return Array.from(root.querySelectorAll(selector)); }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const notification = qs('#notification');
+      notification.textContent = message;
+      notification.className = `notification ${type}`;
+      notification.style.display = 'block';
+      
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 5000);
+    }
+
+    // Loading overlay
+    function showLoading() {
+      qs('#loadingOverlay').style.display = 'flex';
+    }
+
+    function hideLoading() {
+      qs('#loadingOverlay').style.display = 'none';
+    }
+
+    // Convert form to object
+    function formToObject(form) {
+      const obj = {};
+      const elements = Array.from(form.elements).filter(el => el.name && el.type !== 'button');
+      elements.forEach(el => {
+        if (el.type === 'checkbox') {
+          obj[el.name] = el.checked;
+        } else if (el.type === 'radio') {
+          if (el.checked) obj[el.name] = el.value;
+        } else if (el.type === 'file') {
+          // Skip file inputs
+        } else {
+          obj[el.name] = el.value;
+        }
+      });
+      return obj;
+    }
+
+    // Populate form from object
+    function populateForm(form, data) {
+      const elements = Array.from(form.elements).filter(el => el.name);
+      elements.forEach(el => {
+        if (data.hasOwnProperty(el.name)) {
+          try {
+            el.value = data[el.name];
+            if (el.type === 'checkbox') el.checked = !!data[el.name];
+          } catch(e) {
+            console.warn('Could not set value for', el.name, e);
+          }
+        }
+      });
+    }
+
+    // Save form to localStorage
+    function saveForm() {
+      const form = qs('#academicForm');
+      const data = formToObject(form);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      updateStatus('Saved locally at ' + new Date().toLocaleString());
+      showNotification('Form saved locally!', 'success');
+    }
+
+    // Load form from localStorage
+    function loadForm() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return false;
+      try {
+        const parsed = JSON.parse(raw);
+        populateForm(qs('#academicForm'), parsed);
+        updateStatus('Loaded saved data from ' + new Date().toLocaleString());
+        // Trigger input events on basic fields so submit button validity is re-evaluated
+        ['#collegeName', '#collegeCode', '#programme', '#intake', '#collegeEmail'].forEach(sel => {
+          const el = qs(sel);
+          if (el) el.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        return true;
+      } catch(e) {
+        console.error('Failed to parse saved form', e);
+        return false;
+      }
+    }
+
+    // Clear form
+    function clearForm(confirmClear=true) {
+      if (confirmClear) {
+        if (!confirm('Clear form fields? This will NOT remove saved copy in browser unless you confirm deletion.')) return;
+      }
+      const form = qs('#academicForm');
+      form.reset();
+      updateStatus('Form cleared');
+    }
+
+    // Export JSON file with college name as filename
+    function exportJSON() {
+      const form = qs('#academicForm');
+      const data = formToObject(form);
+
+      // Get college name and sanitize it for filename
+      let collegeName = data.collegeName ? data.collegeName.trim() : "college_data";
+      collegeName = collegeName.replace(/[^a-z0-9]/gi, '_'); // replace spaces/special chars
+
+      const jsonString = JSON.stringify(data, null, 2);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${collegeName}.json`; // filename based on college name
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+      showNotification(`Form exported as ${collegeName}.json`, 'success');
+    }
+
+    // Import JSON
+    function importJSON() {
+      qs('#importFile').click();
+    }
+
+    qs('#importFile').addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const content = JSON.parse(e.target.result);
+          populateForm(qs('#academicForm'), content);
+          showNotification('Form imported successfully!', 'success');
+          updateStatus('Form imported from file');
+        } catch (error) {
+          showNotification('Error importing file: Invalid JSON format', 'error');
+        }
+      };
+      reader.readAsText(file);
+      this.value = ''; // Reset file input
+    });
+
+    // Print PDF
+    function printPDF() {
+      window.print();
+    }
+
+    // Update status text
+    function updateStatus(text) {
+      qs('#statusText').textContent = text;
+    }
+
+    // Add row utility for tables
+    function addTableRow(tableSelector) {
+      const table = qs(tableSelector);
+      if (!table) return;
+      const tbody = table.tBodies[0] || table;
+      const lastRow = tbody.rows[tbody.rows.length - 1];
+      const newRow = lastRow.cloneNode(true);
+      
+      // Clear inputs in new row
+      qsa('input, textarea, select', newRow).forEach(inp => {
+        if (inp.type !== 'button') inp.value = '';
+      });
+      
+      // Update serial number if it's the first cell
+      const firstCell = newRow.cells[0];
+      if (firstCell && !firstCell.querySelector('input')) {
+        firstCell.textContent = tbody.rows.length + 1;
+      }
+      
+      tbody.appendChild(newRow);
+    }
+
+    // Delete row utility for tables
+    function deleteTableRow(button) {
+      const row = button.closest('tr');
+      const tbody = row.parentElement;
+      
+      if (tbody.rows.length <= 1) {
+        showNotification('Cannot delete the last row.', 'error');
+        return;
+      }
+      
+      tbody.removeChild(row);
+      
+      // Update serial numbers
+      Array.from(tbody.rows).forEach((r, i) => {
+        const firstCell = r.cells[0];
+        if (firstCell && !firstCell.querySelector('input')) {
+          firstCell.textContent = i + 1;
+        }
+      });
+    }
+
+    // CORRECTED: Submit form to admin - Enhanced version with CORS handling
+    async function submitToAdmin() {
+      const form = qs('#academicForm');
+      const formData = formToObject(form);
+      
+      // Basic validation - only require minimal fields to submit
+      if (!formData.collegeName || !formData.collegeCode || !formData.collegeEmail || !formData.programme || !formData.intake) {
+        showNotification('Please fill in required fields: College Name, College Code, Programme, Intake, and Email', 'error');
+        return;
+      }
+
+      try {
+        showLoading();
+        showNotification('Submitting form to admin dashboard...', 'info');
+        
+        // Use centralized API helper when available; send submittedBy from logged-in user
+        let result;
+        const user = (localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : null;
+        const payload = Object.assign({}, formData, {
+          submittedBy: user ? user.email : null,
+          submittedByName: user ? user.name : null
+        });
+
+        if (typeof makeRequest === 'function') {
+          result = await makeRequest(API_CONFIG.ENDPOINTS.SUBMIT_ACADEMIC_FORM, 'POST', payload);
+        } else {
+          const response = await fetch('http://localhost:8080/submit-academic-form', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+          });
+          result = await response.json();
+        }
+
+        // Handle the result
+        if (result && result.success) {
+          console.log('Success:', result.message);
+          // Save to localStorage
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+          // Show success message
+          showNotification('Academic information submitted successfully!', 'success');
+          updateStatus('Submitted to admin on ' + new Date().toLocaleString());
+          // After successful submission redirect to dashboard where user can see status
+          setTimeout(() => { window.location.href = 'dashboard.html'; }, 800);
+        } else {
+          throw new Error((result && result.message) || 'Submission failed');
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        
+        // Enhanced error messages
+        if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+          showNotification('Cannot connect to server. Please ensure: 1) Server is running on localhost:8080, 2) No CORS issues', 'error');
+        } else if (error.message.includes('CORS')) {
+          showNotification('CORS error: Server configuration issue. Contact administrator.', 'error');
+        } else {
+          showNotification('Failed to submit form: ' + error.message, 'error');
+        }
+      } finally {
+        hideLoading();
+      }
+    }
+
+    // Test server connection
+    async function testServerConnection() {
+      try {
+        const response = await fetch('http://localhost:8080', {
+          method: 'GET',
+          mode: 'cors'
+        });
+        if (response.ok) {
+          console.log('✅ Server is running and accessible');
+          return true;
+        }
+      } catch (error) {
+        console.log('❌ Server is not accessible:', error.message);
+        return false;
+      }
+    }
+
+    // Setup add row listeners
+    function setupAddRowButtons() {
+      qs('#addProgrammeRow').addEventListener('click', () => {
+        addTableRow('#programmeTable');
+      });
+
+      qs('#addAdmissionRow').addEventListener('click', () => {
+        addTableRow('#admissionTable');
+      });
+
+      qs('#addTeacherRow').addEventListener('click', () => {
+        addTableRow('#teacherTable');
+      });
+
+      qs('#addCompLabRow').addEventListener('click', () => {
+        addTableRow('#compLabTable');
+      });
+    }
+
+    // Setup delete row listeners using event delegation
+    function setupDeleteRowListeners() {
+      document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('deleteAdmissionRow') || 
+            e.target.id === 'deleteTeacherRow' || 
+            e.target.id === 'deleteCompLabRow') {
+          deleteTableRow(e.target);
+        }
+      });
+    }
+
+    // Attach main listeners
+    function attachListeners() {
+      qs('#saveBtn').addEventListener('click', saveForm);
+      qs('#clearBtn').addEventListener('click', () => {
+        if (confirm('Do you want to clear the form values and delete saved copy from browser?')) {
+          localStorage.removeItem(STORAGE_KEY);
+          clearForm(false);
+          updateStatus('Cleared and saved copy removed from browser storage');
+          showNotification('Form cleared successfully!', 'success');
+        }
+      });
+      qs('#exportBtn').addEventListener('click', exportJSON);
+      qs('#importBtn').addEventListener('click', importJSON);
+      qs('#printBtn').addEventListener('click', printPDF);
+      qs('#submitForm').addEventListener('click', submitToAdmin);
+
+      // Enable/disable submit button based on minimal required fields
+      const basicFields = ['#collegeName', '#collegeCode', '#programme', '#intake', '#collegeEmail'];
+      function checkBasicValidity() {
+        const values = basicFields.map(s => (qs(s) || {value:''}).value.trim());
+        const allFilled = values.every(v => v.length > 0);
+        // Keep the button clickable for debugging/submit, but visually indicate state.
+        // Validation is enforced when the button is clicked in submitToAdmin().
+        qs('#submitForm').setAttribute('aria-disabled', String(!allFilled));
+        qs('#submitForm').style.opacity = allFilled ? '1' : '0.6';
+        qs('#submitForm').style.cursor = allFilled ? 'pointer' : 'default';
+      }
+      basicFields.forEach(sel => {
+        const el = qs(sel);
+        if (el) el.addEventListener('input', checkBasicValidity);
+      });
+      // Initial check
+      checkBasicValidity();
+
+      setupAddRowButtons();
+      setupDeleteRowListeners();
+    }
+    
+    // Auto-run on page load
+    (function init() {
+      attachListeners();
+      const loaded = loadForm();
+      if (!loaded) {
+        updateStatus('Not saved');
+      }
+      
+      // Test server connection on startup
+      testServerConnection().then(isConnected => {
+        if (isConnected) {
+          console.log('Server connection test: ✅ SUCCESS');
+        } else {
+          console.log('Server connection test: ❌ FAILED');
+          showNotification('Server is not running. Form submission will not work.', 'error');
+        }
+      });
+      
+      // Check if user is logged in
+      const userEmail = localStorage.getItem('userEmail');
+      if (userEmail) {
+        console.log('User logged in:', userEmail);
+      }
+    })();
+  </script>

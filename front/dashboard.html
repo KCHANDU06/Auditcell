@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AUDIT CELL - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #2196F3, #64B5F6);
+      color: #000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Banner */
+    .mgu-header {
+      width: 100%;
+      background-color: #fff;
+    }
+    .mgu-header img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Audit cell bar */
+    .audit-bar {
+      background-color:#0047b3;
+      text-align: center;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    /* Dashboard layout */
+    .dashboard {
+      display: flex;
+      flex: 1;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #1976d2;
+      padding: 20px;
+      color: white;
+      min-height: calc(100vh - 140px); /* adjust for header + audit bar */
+    }
+    .sidebar h2 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin: 12px 0;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      display: block;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .sidebar ul li a:hover {
+      background: #0047b3;
+    }
+
+    /* Content area */
+    .content {
+      flex: 1;
+      padding: 40px;
+      color: white;
+      text-align: center;
+    }
+    .sidebar ul li:last-child a {
+      color:red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Banner -->
+  <div class="mgu-header">
+    <img src="D:\AUDIT\header.jpg" alt="Mahatma Gandhi University Header">
+  </div>
+
+  <!-- Audit Cell Bar -->
+  <div class="audit-bar">
+    AUTOMATED ACADEMIC AUDITING SYSTEM
+  </div>
+
+  <!-- Dashboard Section -->
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>📊 Dashboard</h2>
+      <ul>
+        <li><a href="profile.html"> Profile</a></li>
+        <li><a href="Academicinfo.html"> Academic Information</a></li>
+        <li><a href="contact.html"> Contact</a></li>
+        <li><a href="homepage.html"> Home</a></li>
+        <li><a href="homepage.html" > Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <h1>Welcome to the Audit Cell Dashboard</h1>
+      <p>Select any option from the left menu.</p>
+
+      <section id="mySubmissionsSection" style="margin-top:24px; text-align:left; color:#fff;">
+        <h2>My Submissions</h2>
+        <div id="submissionsContainer">
+          <p>Loading your submissions…</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    async function loadMySubmissions() {
+      const userStr = localStorage.getItem('user');
+      if (!userStr) {
+        qs = (s)=>document.querySelector(s);
+        qs('#submissionsContainer').innerHTML = '<p>Please login to see your submissions.</p>';
+        return;
+      }
+      const user = JSON.parse(userStr);
+      try {
+        const res = await fetch(`${location.protocol}//${location.host}/my/academic-forms?email=${encodeURIComponent(user.email)}`);
+        const data = await res.json();
+        const container = document.getElementById('submissionsContainer');
+        if (!data.success || !data.forms) {
+          container.innerHTML = '<p>No submissions found.</p>';
+          return;
+        }
+        if (data.forms.length === 0) return container.innerHTML = '<p>No submissions yet.</p>';
+
+        // Build table with improved status styling
+        let html = '<table style="width:100%; color:#000; border-collapse:collapse; background:#fff;">';
+        html += '<thead><tr><th style="padding:8px; border:1px solid #ccc;">ID</th><th style="padding:8px; border:1px solid #ccc;">College</th><th style="padding:8px; border:1px solid #ccc;">Submitted At</th><th style="padding:8px; border:1px solid #ccc;">Status</th><th style="padding:8px; border:1px solid #ccc;">Reviewed By</th></tr></thead><tbody>';
+        data.forms.forEach(f => {
+          const st = (f.status || 'pending_review').toString().toLowerCase();
+          const statusLabel = st.includes('pending') ? 'Pending' : (st === 'approved' ? 'Approved' : (st === 'rejected' ? 'Rejected' : f.status));
+          
+          // Status styling
+          let statusStyle = '';
+          if (st === 'approved') {
+            statusStyle = 'background-color:#e8f5e9; color:#2e7d32; font-weight:bold; padding:4px 8px; border-radius:4px;';
+          } else if (st.includes('pending')) {
+            statusStyle = 'background-color:#fff3e0; color:#ef6c00; font-weight:bold; padding:4px 8px; border-radius:4px;';
+          } else if (st === 'rejected') {
+            statusStyle = 'background-color:#ffebee; color:#c62828; font-weight:bold; padding:4px 8px; border-radius:4px;';
+          }
+          
+          html += `<tr>
+            <td style="padding:8px; border:1px solid #ccc;">${f.id}</td>
+            <td style="padding:8px; border:1px solid #ccc;">${f.collegeName || f.formData?.collegeName || '-'}</td>
+            <td style="padding:8px; border:1px solid #ccc;">${new Date(f.submissionDate || f.created_at).toLocaleString()}</td>
+            <td style="padding:8px; border:1px solid #ccc;"><span style="${statusStyle}">${statusLabel}</span></td>
+            <td style="padding:8px; border:1px solid #ccc;">${f.reviewedByName || f.reviewedBy || '-'}</td>
+          </tr>`;
+        });
+        html += '</tbody></table>';
+        container.innerHTML = html;
+      } catch (err) {
+        document.getElementById('submissionsContainer').innerHTML = '<p>Error loading submissions.</p>';
+        console.error(err);
+      }
+    }
+
+    // small helper for qs used above
+    function qs(sel) { return document.querySelector(sel); }
+
+    // Load when page ready
+    window.addEventListener('load', loadMySubmissions);
+  </script>
+</body>
+</html>

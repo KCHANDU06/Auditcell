@@ -1,0 +1,12 @@
+{
+  "name": "my-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --open=login.html --browser=firefox"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

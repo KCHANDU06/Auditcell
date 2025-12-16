@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahatma Gandhi University - Contact Us</title>
+
+<!-- CSS Styling -->
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f6fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Top Blue Bar */
+    header {
+        background-color: #004aad;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* University Header Image */
+    .banner img {
+        display: block;
+        width: 100%;
+        max-height: 140px;
+        object-fit: cover;
+        border-bottom: 3px solid #004aad;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #004aad;
+        text-align: left;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    /* Left-aligned Registrar address */
+    .address {
+        text-align: left;
+        line-height: 1.8;
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .search-box {
+        text-align: right;
+        margin: 20px 0;
+    }
+
+    .search-box input {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        width: 250px;
+        font-size: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #004aad;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e6f0ff;
+    }
+
+    td {
+        color: #333;
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #004aad;
+        color: white;
+        margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+        .container {
+            width: 90%;
+            padding: 15px;
+        }
+
+        .search-box input {
+            width: 100%;
+        }
+
+        table, th, td {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    Mahatma Gandhi University - Contact Information
+</header>
+
+<!-- Banner Section (You can add your university header image here) -->
+<div class="banner">
+    <img src="D:/AUDIT/header.jpg" alt="Mahatma Gandhi University Header">
+</div>
+
+<div class="container">
+    <h2>REGISTRAR</h2>
+
+    <div class="address">
+        <strong>Mahatma Gandhi University</strong><br>
+        Anneparthy, Nalgonda<br>
+        Telangana State - 508 254<br>
+        INDIA
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by Department or Contact...">
+    </div>
+
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Department</th>
+                <th>Contact Person</th>
+                <th>Land Line</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Administration</td><td>PS to VC</td><td>9948623222</td></tr>
+            <tr><td>2</td><td>Administration</td><td>PA to REGISTRAR</td><td>9700335526</td></tr>
+            <tr><td>3</td><td>Director of Admissions</td><td>Director</td><td>9948361250</td></tr>
+            <tr><td>4</td><td>Academic Audit</td><td>Director</td><td>9948182888</td></tr>
+            <tr><td>5</td><td>Dean CDC</td><td>Dean CDC</td><td>9948182888</td></tr>
+            <tr><td>6</td><td>Public Relations</td><td>PRO</td><td>9948572888</td></tr>
+            <tr><td>7</td><td>University College of Arts & Social Sciences</td><td>Principal</td><td>8333986966</td></tr>
+            <tr><td>8</td><td>University College of Commerce & Business Management</td><td>Principal</td><td>9948361250</td></tr>
+            <tr><td>9</td><td>University College of Science & Informatics</td><td>Principal</td><td>8333986955</td></tr>
+            <tr><td>10</td><td>University College of Engineering & Technology</td><td>Principal</td><td>8333986955</td></tr>
+            <tr><td>11</td><td>Examination Branch</td><td>COE</td><td>9948217222</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    © 2025 Mahatma Gandhi University, Nalgonda | All Rights Reserved
+</footer>
+
+<!-- JavaScript for Search Filter -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const table = document.getElementById('contactTable');
+    const rows = table.getElementsByTagName('tr');
+
+    searchInput.addEventListener('keyup', function() {
+        const filter = searchInput.value.toLowerCase();
+        for (let i = 1; i < rows.length; i++) {
+            const cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j] && cells[j].innerText.toLowerCase().includes(filter)) {
+                    match = true;
+                    break;
+                }
+            }
+            rows[i].style.display = match ? '' : 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

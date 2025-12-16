@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password - MGU Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body {
+      margin: 0; height: 100vh;
+      background: linear-gradient(135deg, #4facfe, #9b59b6, #e056fd);
+      display: flex; flex-direction: column;
+    }
+    body::before {
+      content: ""; position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(210deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+                  linear-gradient(120deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+      background-size: 300px 300px;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+    .mgu-header { width: 100%; background-color: #fff; z-index: 1; }
+    .mgu-header img { width: 100%; height: auto; display: block; }
+    .audit-bar { background-color:#0047b3 ; text-align: center; padding: 10px; z-index: 1; }
+    .audit-bar span { color: white; font-weight: bold; font-size: 18px; letter-spacing: 1px; }
+    .form-section { flex: 1; display: flex; justify-content: center; align-items: center; padding: 5px; }
+    .register-card {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(12px);
+      padding: 20px; border-radius: 10px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+      width: 100%; max-width: 480px; color: white;
+    }
+    form { display: grid; gap: 10px; }
+    .row { display: flex; flex-direction: column; gap: 6px; }
+    .row label { font-weight: bold; font-size: 14px; }
+    input, select {
+      width: 100%; padding: 10px 12px; border: none;
+      border-radius: 8px; font-size: 14px; outline: none;
+    }
+    .input-group { position: relative; }
+    .input-group input { padding-right: 110px; }
+    .input-group button {
+      position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+      border: none; border-radius: 8px; padding: 8px 12px;
+      cursor: pointer; font-weight: 600;
+      background: #87CEFA; color: white;
+    }
+    .input-group button:hover { background: #1E90FF; }
+    .otp {
+      display: flex; gap: 8px; justify-content: center; margin-top: 8px;
+    }
+    .otp input {
+      width: 42px; height: 35px; text-align: center;
+      font-size: 18px; font-weight: bold;
+      border-radius: 8px; border: none;
+      background: rgba(255,255,255,0.15); color: white;
+    }
+    .verify-btn {
+      margin-top: 8px; background: #32CD32; color: white;
+      border: none; border-radius: 8px; padding: 10px;
+      cursor: pointer; font-weight: bold;
+    }
+    .verify-btn:hover { background: #228B22; }
+    .resend { margin-top: 6px; font-size: 13px; color: #ffcc66; text-align: center; }
+    .resend a { color: #87CEFA; cursor: pointer; font-weight: bold; text-decoration: none; }
+    .resend a:hover { text-decoration: underline; }
+    .msg { font-size: 13px; text-align: center; margin-top: 6px; }
+    .msg.success { color: #bfecc9; }
+    .msg.error { color: #ffb3b3; }
+    .msg.warn { color: #fff3b0; }
+    @media (max-width: 480px) {
+      .register-card { padding: 20px 15px; }
+      .otp input { width: 36px; height: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mgu-header">
+    <img src="D:/AUDIT/header.jpg" alt="Mahatma Gandhi University Header">
+  </div>
+  <div class="audit-bar">
+    <span>AUTOMATED ACADEMIC AUDITING SYSTEM</span>
+  </div>
+
+  <div class="form-section">
+    <div class="register-card">
+      <form id="forgotForm" autocomplete="off" novalidate>
+        <div class="row">
+          <label for="email">Registered Email :</label>
+          <div class="input-group">
+            <input id="email" type="email" placeholder="Enter your registered email" />
+            <button id="getOtpBtn" type="button">Get OTP</button>
+          </div>
+          <div id="otpSentMsg" class="hint"></div>
+        </div>
+
+        <div class="row">
+          <label>Enter OTP :</label>
+          <div class="otp" id="otpGroup">
+            <input class="otp-input" type="text" maxlength="1" disabled inputmode="numeric" pattern="[0-9]*" />
+            <input class="otp-input" type="text" maxlength="1" disabled inputmode="numeric" pattern="[0-9]*" />
+            <input class="otp-input" type="text" maxlength="1" disabled inputmode="numeric" pattern="[0-9]*" />
+            <input class="otp-input" type="text" maxlength="1" disabled inputmode="numeric" pattern="[0-9]*" />
+            <input class="otp-input" type="text" maxlength="1" disabled inputmode="numeric" pattern="[0-9]*" />
+            <input class="otp-input" type="text" maxlength="1" disabled inputmode="numeric" pattern="[0-9]*" />
+          </div>
+
+          <div class="resend" id="resendDiv">
+            Didn’t receive OTP? <a id="resendOtp">Resend</a>
+          </div>
+          <button id="verifyOtpBtn" type="button" class="verify-btn" disabled>Verify OTP</button>
+          <div id="otpMsg" class="msg" aria-live="polite"></div>
+        </div>
+
+        <div id="msg" class="msg" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script>
+    const msg = document.getElementById('msg');
+    const otpSentMsg = document.getElementById('otpSentMsg');
+    const otpMsg = document.getElementById('otpMsg');
+    const otpInputs = Array.from(document.querySelectorAll('.otp-input'));
+    const getOtpBtn = document.getElementById('getOtpBtn');
+    const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+    const resendOtp = document.getElementById('resendOtp');
+    const resendDiv = document.getElementById('resendDiv');
+    let otpVerified = false;
+
+    function setMsg(text='', type='') {
+      msg.textContent = text;
+      msg.className = 'msg' + (type ? ' ' + type : '');
+    }
+    function setOtpMsg(text='', type='') {
+      otpMsg.textContent = text;
+      otpMsg.className = 'msg' + (type ? ' ' + type : '');
+    }
+    function setOtpSent(text='', type='') {
+      otpSentMsg.textContent = text;
+      otpSentMsg.style.color = type === 'success' ? 'lightgreen' : (type === 'error' ? '#ffb3b3' : '#fff3b0');
+    }
+
+    otpInputs.forEach((input, idx) => {
+      input.addEventListener('input', () => {
+        const val = input.value.replace(/[^0-9a-zA-Z]/g, '');
+        input.value = val ? val[0] : '';
+        if (val && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
+        setOtpMsg(''); setMsg('');
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !input.value && idx > 0) {
+          otpInputs[idx - 1].focus();
+          otpInputs[idx - 1].value = '';
+        }
+      });
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const paste = (e.clipboardData || window.clipboardData).getData('text').trim();
+        if (!paste) return;
+        for (let i = 0; i < otpInputs.length; i++) otpInputs[i].value = paste[i] || '';
+      });
+    });
+
+    function enableOtpInputs() {
+      otpInputs.forEach((input, idx) => {
+        input.disabled = false;
+        input.value = '';
+        if (idx === 0) input.focus();
+      });
+      verifyOtpBtn.disabled = false;
+    }
+
+    async function sendOtp(email) {
+      try {
+        const data = await makeRequest(API_CONFIG.ENDPOINTS.SEND_OTP, 'POST', { email });
+        if (data && data.success) {
+          enableOtpInputs();
+          setOtpSent(`OTP has been sent to your email (${email}).`, 'success');
+        } else {
+          setOtpSent(data && data.message ? data.message : 'Error sending OTP.', 'error');
+        }
+      } catch (err) {
+        console.error('Send OTP error:', err);
+        // Prefer the server-provided message when available, otherwise show network hint
+        const userMsg = err && err.message ? `❌ Error sending OTP: ${err.message}` : '❌ Error sending OTP (server unreachable).';
+        setOtpSent(userMsg, 'error');
+      }
+    }
+
+    getOtpBtn.addEventListener('click', () => {
+      const email = (document.getElementById('email').value || '').trim();
+      if (!email) { setOtpSent('Enter a valid email to receive OTP.', 'warn'); return; }
+      sendOtp(email);
+    });
+
+    resendOtp.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = (document.getElementById('email').value || '').trim();
+      if (!email) { setOtpSent('Enter email first to resend OTP.', 'warn'); return; }
+      sendOtp(email);
+    });
+
+    verifyOtpBtn.addEventListener('click', async () => {
+      const email = (document.getElementById('email').value || '').trim();
+      const otp = otpInputs.map(i => i.value).join('');
+      if (otp.length !== otpInputs.length) { setOtpMsg('Please enter the full ' + otpInputs.length + '-digit OTP.', 'warn'); return; }
+      try {
+        const data = await makeRequest(API_CONFIG.ENDPOINTS.VERIFY_OTP, 'POST', { email, otp });
+        if (data && data.success) {
+          otpVerified = true;
+          setOtpMsg('✅ OTP verified!', 'success');
+          resendDiv.style.display = "none";
+        // Redirect to create password page with email (relative)
+        const redirectUrl = `createpassword.html?email=${encodeURIComponent(email)}`;
+        setTimeout(() => { window.location.href = redirectUrl; }, 800);
+        } else {
+          setOtpMsg(data && data.message ? data.message : 'Invalid or expired OTP.', 'error');
+        }
+      } catch (err) {
+        console.error('Verify OTP error:', err);
+        const userMsg = err && err.message ? `❌ Error verifying OTP: ${err.message}` : '❌ Error verifying OTP (server unreachable).';
+        setOtpMsg(userMsg, 'error');
+      }
+    });
+    // Prevent browser from showing old cached version
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+      window.location.reload();
+    }
+  });
+  </script>
+</body>
+</html>

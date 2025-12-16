@@ -1,0 +1,632 @@
+[2025-12-14T11:33:17.070Z] 📩 POST request received at /login
+[2025-12-14T11:33:17.073Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T11:33:45.494Z] 📩 POST request received at /login
+[2025-12-14T11:33:45.497Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T11:41:15.111Z] 📩 POST request received at /login
+[2025-12-14T11:41:15.115Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T11:41:15.506Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T11:41:57.325Z] 📩 POST request received at /login
+[2025-12-14T11:41:57.326Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T11:41:59.105Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:41:59.145Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:42:00.085Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:42:00.106Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:42:06.577Z] 📩 POST request received at /login
+[2025-12-14T11:42:06.582Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T11:42:06.872Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T11:42:29.092Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:42:29.126Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:42:48.116Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T11:42:48.119Z] 🧾 Request Body: {"collegeName":"KCM COLLEGE","collegeCode":"OU1236666","programme":"MPCSSS","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"cmshannu@gmail.com","submittedByName":"cm"}
+[2025-12-14T11:42:51.680Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T11:42:51.682Z] 🧾 Request Body: {"collegeName":"KCM COLLEGE","collegeCode":"OU1236666","programme":"MPCSSS","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"cmshannu@gmail.com","submittedByName":"cm"}
+[2025-12-14T11:42:59.185Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:42:59.232Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:43:29.279Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:43:29.321Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:43:59.297Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:43:59.331Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:44:29.302Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:44:29.339Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:44:59.408Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:44:59.434Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:45:29.414Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:45:29.452Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:45:59.515Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:45:59.569Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:46:29.525Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:46:29.568Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:46:59.529Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:46:59.569Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:47:29.537Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:47:29.578Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:47:59.644Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:47:59.679Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:48:28.888Z] 📩 POST request received at /login
+[2025-12-14T11:48:28.890Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T11:48:29.271Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T11:48:39.270Z] 📩 POST request received at /login
+[2025-12-14T11:48:39.273Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T11:48:39.529Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T11:48:49.823Z] 📩 POST request received at /login
+[2025-12-14T11:48:49.825Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T11:48:51.690Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:48:51.725Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:48:52.682Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:48:52.711Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:49:12.732Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T11:49:12.735Z] 🧾 Request Body: {"collegeName":"KCM  COLLEGE","collegeCode":"OU1236666","programme":"MPCSS","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"gugulothusai877@gmail.com","submittedByName":"Admin"}
+[2025-12-14T11:49:13.705Z] 📩 GET request received at /my/academic-forms?email=gugulothusai877%40gmail.com
+[2025-12-14T11:49:20.156Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:49:20.168Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:49:50.163Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:49:50.173Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:50:03.542Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T11:50:03.544Z] 🧾 Request Body: {"type":"inspection","collegeName":"KCM","collegeCode":"UC123605","Programme":"MPCSS","submittedBy":"gugulothusai877@gmail.com","submittedByName":"Admin","academicYear":"2024-25","submissionDate":"2025-12-14T11:50:03.538Z","formData":{"collegeName":"KCM","collegeCode":"UC123605","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"2025-12-24","course":"MPCSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T11:50:03.563Z] 📩 POST request received at /save-academic-form
+[2025-12-14T11:50:03.564Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","formData":{"collegeName":"KCM","collegeCode":"UC123605","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"2025-12-24","course":"MPCSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T11:50:03.714Z] 📩 GET request received at /my/academic-forms?email=gugulothusai877%40gmail.com
+[2025-12-14T11:50:20.167Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:50:20.178Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:51:56.892Z] 📩 GET request received at /favicon.ico
+[2025-12-14T11:52:18.378Z] 📩 POST request received at /login
+[2025-12-14T11:52:18.381Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T11:52:20.949Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:52:20.975Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:52:21.927Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:52:21.968Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:52:27.852Z] 📩 POST request received at /login
+[2025-12-14T11:52:27.855Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T11:52:28.192Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T11:52:40.538Z] 📩 POST request received at /login
+[2025-12-14T11:52:40.540Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T11:52:40.902Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T11:52:49.153Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:52:49.199Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:53:19.278Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:53:19.310Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:53:49.287Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:53:49.334Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:54:03.086Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T11:54:03.087Z] 🧾 Request Body: {"type":"inspection","collegeName":"KCM","collegeCode":"UC123","Programme":",MPCSS","submittedBy":"ganesh123@gmail.com","submittedByName":"Inspector","academicYear":"2024-25","submissionDate":"2025-12-14T11:54:03.082Z","formData":{"collegeName":"KCM","collegeCode":"UC123","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0025-12-24","course":",MPCSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T11:54:03.112Z] 📩 POST request received at /save-academic-form
+[2025-12-14T11:54:03.113Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","formData":{"collegeName":"KCM","collegeCode":"UC123","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0025-12-24","course":",MPCSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T11:54:03.318Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T11:54:19.298Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:54:19.335Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:54:49.925Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:54:49.977Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:55:19.929Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:55:19.976Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:55:50.005Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:55:50.028Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:56:20.015Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:56:20.057Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:56:50.017Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:56:50.066Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:57:20.014Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:57:20.041Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:57:50.074Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:57:50.120Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:58:20.087Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:58:20.122Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:58:50.085Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:58:50.123Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:59:20.104Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:59:20.135Z] 📩 GET request received at /admin/forms
+[2025-12-14T11:59:50.102Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T11:59:50.135Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:00:20.109Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:00:20.134Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:00:50.109Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:00:50.135Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:01:04.386Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:01:04.389Z] 🧾 Request Body: {"type":"inspection","collegeName":"kcm","collegeCode":"46631","Programme":"mpcss","submittedBy":"ganesh123@gmail.com","submittedByName":"Inspector","academicYear":"2024-25","submissionDate":"2025-12-14T12:01:04.386Z","formData":{"collegeName":"kcm","collegeCode":"46631","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0525-12-24","course":"mpcss","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T12:01:04.407Z] 📩 POST request received at /save-academic-form
+[2025-12-14T12:01:04.409Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","formData":{"collegeName":"kcm","collegeCode":"46631","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0525-12-24","course":"mpcss","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T12:01:04.595Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T12:01:24.746Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:01:24.790Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:01:41.481Z] 📩 POST request received at /login
+[2025-12-14T12:01:41.483Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T12:01:41.805Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T12:02:10.451Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:02:10.452Z] 🧾 Request Body: {"type":"inspection","collegeName":"kcm","collegeCode":"1326","Programme":"mpcss","submittedBy":"ganesh123@gmail.com","submittedByName":"Inspector","academicYear":"2024-25","submissionDate":"2025-12-14T12:02:10.454Z","formData":{"collegeName":"kcm","collegeCode":"1326","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0525-12-24","course":"mpcss","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T12:02:10.475Z] 📩 POST request received at /save-academic-form
+[2025-12-14T12:02:10.476Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","formData":{"collegeName":"kcm","collegeCode":"1326","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0525-12-24","course":"mpcss","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T12:02:10.636Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T12:02:57.134Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:02:57.135Z] 🧾 Request Body: {"type":"inspection","collegeName":"KCM","collegeCode":"CM12654","Programme":"MPCSSSS","submittedBy":"ganesh123@gmail.com","submittedByName":"Inspector","academicYear":"2024-25","submissionDate":"2025-12-14T12:02:57.134Z","formData":{"collegeName":"KCM","collegeCode":"CM12654","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0025-12-24","course":"MPCSSSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T12:02:57.159Z] 📩 POST request received at /save-academic-form
+[2025-12-14T12:02:57.161Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","formData":{"collegeName":"KCM","collegeCode":"CM12654","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0025-12-24","course":"MPCSSSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T12:02:57.303Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T12:03:45.578Z] 📩 POST request received at /login
+[2025-12-14T12:03:45.582Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T12:03:47.934Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:03:47.985Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:03:48.940Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:03:48.965Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:03:56.917Z] 📩 POST request received at /login
+[2025-12-14T12:03:56.920Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T12:03:57.271Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T12:04:06.038Z] 📩 POST request received at /login
+[2025-12-14T12:04:06.040Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T12:04:06.272Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:04:17.942Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:04:17.970Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:04:38.223Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:04:38.226Z] 🧾 Request Body: {"collegeName":"ABC  COLLEGE","collegeCode":"OU1236666","programme":"MPCSS","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"cmshannu@gmail.com","submittedByName":"cm"}
+[2025-12-14T12:04:39.197Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:04:49.208Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:04:49.234Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:12.356Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:05:12.358Z] 🧾 Request Body: {"type":"inspection","collegeName":"ACB COLLEGE","collegeCode":"ABC1365","Programme":"MPCSS","submittedBy":"cmshannu@gmail.com","submittedByName":"cm","academicYear":"2024-25","submissionDate":"2025-12-14T12:05:12.353Z","formData":{"collegeName":"ACB COLLEGE","collegeCode":"ABC1365","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0125-02-04","course":"MPCSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T12:05:12.378Z] 📩 POST request received at /save-academic-form
+[2025-12-14T12:05:12.379Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","formData":{"collegeName":"ACB COLLEGE","collegeCode":"ABC1365","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0125-02-04","course":"MPCSS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T12:05:12.549Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:05:16.081Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:05:19.883Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:19.893Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:25.018Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:25.086Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:26.081Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:26.132Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:37.712Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:37.759Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:38.715Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:38.755Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:39.900Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:39.933Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:43.559Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:43.597Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:49.043Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:49.068Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:05:54.978Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:05:55.004Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:06:00.021Z] 📩 POST request received at /admin/update-form-status
+[2025-12-14T12:06:00.024Z] 🧾 Request Body: {"userEmail":"cmshannu@gmail.com","formId":"9","status":"approved","reviewedBy":"cmshannu@gmail.com","reviewedByName":"cm","comments":"","formType":"academic","collegeCode":"OU1236666","collegeName":"ABC  COLLEGE","programme":"MPCSS"}
+[2025-12-14T12:06:00.106Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T12:06:00.110Z] 🧾 Request Body: {"formId":"9","formType":"academic_information","userEmail":"cmshannu@gmail.com"}
+[2025-12-14T12:06:03.249Z] 📩 POST request received at /admin/update-form-status
+[2025-12-14T12:06:03.253Z] 🧾 Request Body: {"userEmail":"cmshannu@gmail.com","formId":"10","status":"inspection_completed","reviewedBy":"cmshannu@gmail.com","reviewedByName":"cm","comments":"","formType":"inspection","collegeCode":"ABC1365","collegeName":"ACB COLLEGE","programme":"MPCSS"}
+[2025-12-14T12:06:03.301Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T12:06:03.303Z] 🧾 Request Body: {"formId":"10","formType":"inspection","userEmail":"cmshannu@gmail.com"}
+[2025-12-14T12:06:05.167Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T12:06:05.169Z] 🧾 Request Body: {"formId":10,"formType":"inspection","userEmail":"cmshannu@gmail.com","generatedBy":"cmshannu@gmail.com"}
+[2025-12-14T12:06:05.412Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:06:05.429Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:06:36.100Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:06:36.114Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:06:54.615Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:06:54.626Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:06:58.148Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:06:58.184Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:06:59.152Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:06:59.167Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:07:05.314Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:07:05.330Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:11:18.468Z] 📩 GET request received at /favicon.ico
+[2025-12-14T12:12:36.808Z] 📩 POST request received at /login
+[2025-12-14T12:12:36.811Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T12:12:38.963Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:12:39.043Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:12:39.966Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:12:40.000Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:12:47.502Z] 📩 POST request received at /login
+[2025-12-14T12:12:47.505Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T12:12:47.852Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T12:12:55.067Z] 📩 POST request received at /login
+[2025-12-14T12:12:55.070Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T12:12:55.324Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:13:08.983Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:13:09.015Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:13:38.991Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:13:39.022Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:14:08.999Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:14:09.020Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:14:14.081Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:14:14.084Z] 🧾 Request Body: {"collegeName":"WOMENS  COLLEGE","collegeCode":"OU1236666","programme":"MICRO BIO","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"cmshannu@gmail.com","submittedByName":"cm"}
+[2025-12-14T12:14:15.056Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:14:39.003Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:14:39.014Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:05.315Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:15:05.317Z] 🧾 Request Body: {"type":"inspection","collegeName":"WOMENS","collegeCode":"CM786","Programme":"MICRO BIO","submittedBy":"cmshannu@gmail.com","submittedByName":"cm","academicYear":"2024-25","submissionDate":"2025-12-14T12:15:05.309Z","formData":{"collegeName":"WOMENS","collegeCode":"CM786","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0005-08-24","course":"MICRO BIO","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T12:15:05.336Z] 📩 POST request received at /save-academic-form
+[2025-12-14T12:15:05.338Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","formData":{"collegeName":"WOMENS","collegeCode":"CM786","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0005-08-24","course":"MICRO BIO","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T12:15:05.509Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:15:08.010Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:15:09.017Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:09.033Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:30.236Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:30.259Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:31.245Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:31.290Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:35.692Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:35.721Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:41.737Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:41.790Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:42.749Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:42.786Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:45.820Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:45.849Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:15:49.465Z] 📩 POST request received at /admin/update-form-status
+[2025-12-14T12:15:49.467Z] 🧾 Request Body: {"userEmail":"cmshannu@gmail.com","formId":"12","status":"inspection_completed","reviewedBy":"cmshannu@gmail.com","reviewedByName":"cm","formType":"inspection"}
+[2025-12-14T12:15:52.259Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:15:52.286Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:16:09.991Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:16:10.004Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:16:12.001Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:16:12.016Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:16:15.112Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:16:15.151Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:16:16.204Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:16:16.223Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:16:25.342Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:16:25.361Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:16:33.053Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T12:16:33.055Z] 🧾 Request Body: {"formId":12,"formType":"inspection","userEmail":"cmshannu@gmail.com","generatedBy":"cmshannu@gmail.com"}
+[2025-12-14T12:16:43.242Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:16:43.256Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:13.245Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:17:13.256Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:23.071Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:17:23.134Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:24.082Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:17:24.095Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:25.302Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:17:25.337Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:32.814Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:17:32.830Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:45.264Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:17:51.280Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:17:51.300Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:17:56.631Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:17:57.482Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:17:58.137Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:17:58.601Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T12:18:21.807Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T12:18:21.825Z] 📩 GET request received at /admin/forms
+[2025-12-14T12:18:41.565Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T12:18:41.568Z] 🧾 Request Body: {"type":"inspection","collegeName":"DVM COLLEGE","collegeCode":"DVM123","Programme":"LLB","submittedBy":"cmshannu@gmail.com","submittedByName":"cm","academicYear":"2024-25","submissionDate":"2025-12-14T12:18:41.559Z","formData":{"collegeName":"DVM COLLEGE","collegeCode":"DVM123","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"2025-08-24","course":"LLB","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T12:18:41.588Z] 📩 POST request received at /save-academic-form
+[2025-12-14T12:18:41.589Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","formData":{"collegeName":"DVM COLLEGE","collegeCode":"DVM123","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"2025-08-24","course":"LLB","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T12:18:41.726Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:28:09.244Z] 📩 GET request received at /favicon.ico
+[2025-12-14T13:28:31.037Z] 📩 POST request received at /login
+[2025-12-14T13:28:31.039Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T13:28:32.956Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:28:33.012Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:28:33.906Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:28:33.941Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:28:56.197Z] 📩 POST request received at /login
+[2025-12-14T13:28:56.201Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T13:28:56.620Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T13:28:59.841Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T13:29:02.929Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:29:02.960Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:29:10.331Z] 📩 POST request received at /login
+[2025-12-14T13:29:10.334Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T13:29:10.649Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:29:23.679Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:29:33.093Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:29:33.127Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:29:39.146Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:29:40.013Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:29:43.521Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:30:03.089Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:30:03.124Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:30:33.103Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:30:33.138Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:31:03.114Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:31:03.151Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:31:33.126Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:31:33.161Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:32:03.128Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:32:03.168Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:32:33.132Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:32:33.167Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:33:03.200Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:33:03.268Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:33:33.213Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:33:33.232Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:34:03.219Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:34:03.264Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:34:33.230Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:34:33.260Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:35:03.237Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:35:03.278Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:35:18.573Z] 📩 POST request received at /send-otp
+[2025-12-14T13:35:18.585Z] 🧾 Request Body: {"email":"venkannayeshaboina623@gmail.com","userName":"user"}
+[2025-12-14T13:35:33.246Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:35:33.272Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:36:03.258Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:36:03.302Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:36:33.275Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:36:33.305Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:36:54.098Z] 📩 POST request received at /send-otp
+[2025-12-14T13:36:54.101Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","userName":"user"}
+[2025-12-14T13:37:03.287Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:37:03.309Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:37:29.520Z] 📩 POST request received at /send-otp
+[2025-12-14T13:37:29.523Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","userName":"user"}
+[2025-12-14T13:37:32.544Z] 📩 POST request received at /send-otp
+[2025-12-14T13:37:32.547Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","userName":"user"}
+[2025-12-14T13:37:33.371Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:37:33.403Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:37:46.980Z] 📩 POST request received at /send-otp
+[2025-12-14T13:37:46.981Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","userName":"user2"}
+[2025-12-14T13:38:29.318Z] 📩 GET request received at /favicon.ico
+[2025-12-14T13:38:39.865Z] 📩 POST request received at /send-otp
+[2025-12-14T13:38:39.867Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","userName":"user6"}
+[2025-12-14T13:39:02.545Z] 📩 POST request received at /verify-otp
+[2025-12-14T13:39:02.548Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","otp":"484826"}
+[2025-12-14T13:39:55.769Z] 📩 POST request received at /register
+[2025-12-14T13:39:55.790Z] 🧾 Request Body: {"name":"user6","email":"gantadivyasri3@gmail.com","password":"User@123"}
+[2025-12-14T13:40:09.510Z] 📩 POST request received at /login
+[2025-12-14T13:40:09.512Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","password":"User@123"}
+[2025-12-14T13:40:09.921Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:41:06.079Z] 📩 GET request received at /favicon.ico
+[2025-12-14T13:41:34.565Z] 📩 POST request received at /login
+[2025-12-14T13:41:34.568Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T13:41:36.425Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:41:36.473Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:41:37.435Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:41:37.453Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:41:46.315Z] 📩 POST request received at /login
+[2025-12-14T13:41:46.318Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T13:41:46.723Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T13:41:55.042Z] 📩 POST request received at /login
+[2025-12-14T13:41:55.045Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T13:41:55.366Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:41:59.312Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:42:01.869Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T13:42:05.028Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:42:05.041Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:42:12.227Z] 📩 POST request received at /login
+[2025-12-14T13:42:12.230Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","password":"User@123"}
+[2025-12-14T13:42:12.515Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:42:35.325Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:42:35.340Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:42:45.943Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T13:42:45.945Z] 🧾 Request Body: {"collegeName":"KPM COLLEGE","collegeCode":"OU1236666","programme":"GENERAL","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"gantadivyasri3@gmail.com","submittedByName":"user6"}
+[2025-12-14T13:42:46.895Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:42:57.141Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:42:57.206Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:42:58.142Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:42:58.196Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:42:58.671Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:42:58.707Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:43:25.012Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:43:25.039Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:43:44.313Z] 📩 POST request received at /submit-academic-form
+[2025-12-14T13:43:44.316Z] 🧾 Request Body: {"type":"inspection","collegeName":"KPM COLLEGE","collegeCode":"KPM12345","Programme":"MPCS","submittedBy":"gantadivyasri3@gmail.com","submittedByName":"user6","academicYear":"2024-25","submissionDate":"2025-12-14T13:43:44.314Z","formData":{"collegeName":"KPM COLLEGE","collegeCode":"KPM12345","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"2025-08-24","course":"MPCS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-14T13:43:44.337Z] 📩 POST request received at /save-academic-form
+[2025-12-14T13:43:44.339Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","formData":{"collegeName":"KPM COLLEGE","collegeCode":"KPM12345","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"2025-08-24","course":"MPCS","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-14T13:43:44.505Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:43:47.166Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:43:52.001Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:43:54.579Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:43:56.013Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:43:56.025Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:43:59.978Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:44:05.667Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:44:05.697Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:44:06.646Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:44:06.662Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:44:08.518Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:44:08.545Z] 📩 GET request received at /admin/forms
+[2025-12-14T13:44:14.838Z] 📩 POST request received at /admin/update-form-status
+[2025-12-14T13:44:14.842Z] 🧾 Request Body: {"userEmail":"gantadivyasri3@gmail.com","formId":"14","status":"approved","reviewedBy":"gantadivyasri3@gmail.com","reviewedByName":"user6","comments":"","formType":"academic","collegeCode":"OU1236666","collegeName":"KPM COLLEGE","programme":"GENERAL"}
+[2025-12-14T13:44:14.904Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T13:44:14.906Z] 🧾 Request Body: {"formId":"14","formType":"academic_information","userEmail":"gantadivyasri3@gmail.com"}
+[2025-12-14T13:44:17.862Z] 📩 POST request received at /admin/update-form-status
+[2025-12-14T13:44:17.864Z] 🧾 Request Body: {"userEmail":"gantadivyasri3@gmail.com","formId":"15","status":"inspection_completed","reviewedBy":"gantadivyasri3@gmail.com","reviewedByName":"user6","comments":"","formType":"inspection","collegeCode":"KPM12345","collegeName":"KPM COLLEGE","programme":"MPCS"}
+[2025-12-14T13:44:17.919Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T13:44:17.922Z] 🧾 Request Body: {"formId":"15","formType":"inspection","userEmail":"gantadivyasri3@gmail.com"}
+[2025-12-14T13:44:22.339Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:44:26.138Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:44:30.846Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:44:32.483Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-14T13:44:34.362Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T13:44:34.374Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:21:07.075Z] 📩 GET request received at /favicon.ico
+[2025-12-14T16:21:15.863Z] 📩 POST request received at /login
+[2025-12-14T16:21:15.864Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-14T16:21:18.347Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T16:21:18.407Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:21:19.277Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T16:21:19.318Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:21:25.919Z] 📩 POST request received at /login
+[2025-12-14T16:21:25.921Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-14T16:21:26.644Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-14T16:21:32.203Z] 📩 POST request received at /login
+[2025-12-14T16:21:32.205Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-14T16:21:32.619Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T16:21:38.337Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T16:21:48.289Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T16:21:48.316Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:21:51.217Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T16:21:56.890Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T16:22:18.287Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T16:22:18.305Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:22:19.935Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T16:22:19.973Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:22:27.532Z] 📩 POST request received at /admin/update-form-status
+[2025-12-14T16:22:27.541Z] 🧾 Request Body: {"userEmail":"cmshannu@gmail.com","formId":"11","status":"approved","reviewedBy":"cmshannu@gmail.com","reviewedByName":"cm","comments":"","formType":"academic","collegeCode":"OU1236666","collegeName":"WOMENS  COLLEGE","programme":"MICRO BIO"}
+[2025-12-14T16:22:27.623Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-14T16:22:27.625Z] 🧾 Request Body: {"formId":"11","formType":"academic_information","userEmail":"cmshannu@gmail.com"}
+[2025-12-14T16:22:33.586Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T16:22:39.007Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-14T16:22:48.297Z] 📩 GET request received at /admin/academic-forms
+[2025-12-14T16:22:48.315Z] 📩 GET request received at /admin/forms
+[2025-12-14T16:22:52.452Z] 📩 POST request received at /login
+[2025-12-14T16:22:52.454Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","password":"User@123"}
+[2025-12-14T16:22:52.808Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:19:21.233Z] 📩 GET request received at /favicon.ico
+[2025-12-15T13:19:41.447Z] 📩 POST request received at /login
+[2025-12-15T13:19:41.448Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-15T13:19:43.237Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:19:43.296Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:19:44.245Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:19:44.261Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:19:49.718Z] 📩 POST request received at /login
+[2025-12-15T13:19:49.720Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-15T13:19:49.993Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-15T13:19:57.341Z] 📩 POST request received at /login
+[2025-12-15T13:19:57.342Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-15T13:19:57.497Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:20:01.058Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:20:03.786Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:20:11.755Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:20:11.766Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:20:42.047Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:20:42.059Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:21:12.051Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:21:12.066Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:21:17.921Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:21:40.147Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:21:42.062Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:21:42.076Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:22:12.079Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:22:12.094Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:22:14.001Z] 📩 POST request received at /login
+[2025-12-15T13:22:14.002Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","password":"User@123"}
+[2025-12-15T13:22:14.219Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:22:42.098Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:22:42.117Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:23:12.092Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:23:12.110Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:23:15.189Z] 📩 POST request received at /submit-academic-form
+[2025-12-15T13:23:15.190Z] 🧾 Request Body: {"collegeName":"OU  COLLEGE","collegeCode":"OU786786","programme":"GENERAL","intake":"120","inspectionDate":"2025-08-24","challanNo":"786786","challanDate":"5028-02-24","amount":"52522","complianceSubmitted":"No","collegeAddress":"CLOCK ,nalgonda,","landline":"nlg","mobile":"4563214568","collegeEmail":"m@gmail.com","website":"www.mgu","societyInfo":"","societyPhone":"","societyEmail":"","secretaryName":"","secretaryTelephone":"","secretaryEmail":"","principalName":"RAJU","principalQualifications":"MTECH","principalAppointedMGU":"Yes","principalDOB":"2002-02-12","principalMobile":"8963258965","principalEmail":"mhu@gmail.com","accommodationNature":"","accommodationDocs":"","actualLandArea":"","requiredLandArea":"","yearEstablishment":"2000","otherProgrammes":"5","aictePermission":"10","stateGONo":"10","mguAffiliation":"20","otherInstitutions":"Yes","aicteObtained":"Yes","collegeStatus":"CO","univNomineeGoverning":"MGU","univNomineeSelection":"MGU","governingMeetings":"","workingHours":"","workloadStatement":"","timeTable":"","payScalesPaid":"","salaryDetails":"","ccCameras":"","digitalLibrary":"","wifiFacility":"","prog_name_1":"MPC","prog_year_1":"2025","prog_sanctioned_1":"480","prog_i_1":"120","prog_ii_1":"120","prog_iii_1":"120","prog_iv_1":"120","prog_mode_1":"DOST","admission_sanctioned_1":"","admission_convener_1":"","admission_management_1":"","admission_minority_1":"","admission_count_1":"","req_professors":"","av_mgu_professors":"","av_ad_professors":"","total_professors":"","req_assoc":"","av_mgu_assoc":"","av_ad_assoc":"","total_assoc":"","req_assistant":"","av_mgu_assistant":"","av_ad_assistant":"","total_assistant":"","teacher_name_1":"","teacher_designation_1":"","teacher_qual_1":"","teacher_dob_1":"","teacher_exp_1":"","teacher_mgu_1":"","teacher_mgmt_1":"","nonprog_1":"MPCS","nonlabasst_1":"1","nonprogmr_1":"5","nonlabatt_1":"4","nontotal_1":"120","acc_classrooms_number":"52","acc_classrooms_area":"4566","acc_tutorial_number":"5","acc_tutorial_area":"556222","acc_seminar_number":"2","acc_seminar_area":"46","acc_comp_number":"12","acc_comp_area":"6","complab_area_1":"","complab_equip_1":"","complab_batch_1":"","comp_desktops_desc":"","comp_desktops_qty":"","comp_server_desc":"","comp_server_qty":"","comp_soft_desc":"","comp_soft_qty":"","comp_net_desc":"","comp_net_qty":"","comp_internet_desc":"","comp_internet_qty":"","comp_printers_desc":"","comp_printers_qty":"","libraryArea":"456","librarianInfo":"hj","libVolumes":"45","libTitles":"456","booksAdded":"5","nationalJournals":"5","internationalJournals":"5","amountBooks":"5","amountJournals":"8","readingCapacity":"7","libraryDesktops":"7","eBooks":"8","eJournals":"8","delnetDetails":"5","area_principal_office":"","area_admin_office":"","area_exams_office":"","area_placement_office":"","area_central_store":"","area_security":"","area_staffroom":"","area_sportsroom":"","amen_boys":"","amen_girls":"","amen_cafe":"","amen_backup":"","amen_safety":"","amen_transport":"","amen_water":"","amen_toilets":"","amen_firstaid":"","amen_display":"","amen_nameboard":"","result_course_1":"MPC","result_i_1":"120","result_ii_1":"180","result_iii_1":"100","placement_company_1":"INFO","placement_count_1":"20","gamesDetails":"","seminar_particular_1":"","seminar_org_1":"","seminar_att_1":"","antiRaggingAppointed":"","antiRaggingReport":"","antiRaggingSummary":"","antiRaggingMeasures":"","rtiPIOAPIO":"","rtiNames":"","womenCellAppointed":"","womenCellDetails":"","womenCellActivities":"","grievanceAppointed":"","grievanceDetails":"","grievanceActivities":"","otherInformation":"","comm_name_1":"","comm_dept_1":"","comm_phone_1":"","comm_name_2":"","comm_dept_2":"","comm_phone_2":"","sig_secretary_name":"","sig_secretary_date":"","sig_principal_name":"","sig_principal_date":"","submittedBy":"gantadivyasri3@gmail.com","submittedByName":"user6"}
+[2025-12-15T13:23:16.075Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:23:42.091Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:23:42.104Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:24:07.232Z] 📩 POST request received at /submit-academic-form
+[2025-12-15T13:24:07.232Z] 🧾 Request Body: {"type":"inspection","collegeName":"OU COLLEGE","collegeCode":"OU786786","Programme":"GENERAL","submittedBy":"gantadivyasri3@gmail.com","submittedByName":"user6","academicYear":"2024-25","submissionDate":"2025-12-15T13:24:07.234Z","formData":{"collegeName":"OU COLLEGE","collegeCode":"OU786786","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0055-12-24","course":"GENERAL","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-15T13:24:07.247Z] 📩 POST request received at /save-academic-form
+[2025-12-15T13:24:07.247Z] 🧾 Request Body: {"email":"gantadivyasri3@gmail.com","formData":{"collegeName":"OU COLLEGE","collegeCode":"OU786786","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0055-12-24","course":"GENERAL","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-15T13:24:07.344Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:24:12.473Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:24:12.810Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:24:12.838Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:24:20.102Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:24:20.140Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:24:21.080Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:24:21.089Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:24:26.985Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:24:27.011Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:24:50.103Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:24:50.121Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:25:00.339Z] 📩 POST request received at /admin/update-form-status
+[2025-12-15T13:25:00.342Z] 🧾 Request Body: {"userEmail":"gantadivyasri3@gmail.com","formId":"18","status":"approved","reviewedBy":"gantadivyasri3@gmail.com","reviewedByName":"user6","comments":"","formType":"academic","collegeCode":"OU786786","collegeName":"OU  COLLEGE","programme":"GENERAL"}
+[2025-12-15T13:25:00.404Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-15T13:25:00.406Z] 🧾 Request Body: {"formId":"18","formType":"academic_information","userEmail":"gantadivyasri3@gmail.com"}
+[2025-12-15T13:25:05.661Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:25:20.115Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:25:20.134Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:25:29.956Z] 📩 POST request received at /admin/update-form-status
+[2025-12-15T13:25:29.959Z] 🧾 Request Body: {"userEmail":"gantadivyasri3@gmail.com","formId":"19","status":"inspection_completed","reviewedBy":"gantadivyasri3@gmail.com","reviewedByName":"user6","comments":"","formType":"inspection","collegeCode":"OU786786","collegeName":"OU COLLEGE","programme":"GENERAL"}
+[2025-12-15T13:25:29.995Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-15T13:25:29.996Z] 🧾 Request Body: {"formId":"19","formType":"inspection","userEmail":"gantadivyasri3@gmail.com"}
+[2025-12-15T13:25:33.114Z] 📩 POST request received at /admin/generate-affiliation
+[2025-12-15T13:25:33.115Z] 🧾 Request Body: {"formId":19,"formType":"inspection","userEmail":"gantadivyasri3@gmail.com","generatedBy":"gantadivyasri3@gmail.com"}
+[2025-12-15T13:25:40.078Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:25:50.114Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:25:50.132Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:26:08.128Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:26:08.167Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:26:09.140Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:26:09.168Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:26:12.438Z] 📩 GET request received at /my/academic-forms?email=gantadivyasri3%40gmail.com
+[2025-12-15T13:26:35.508Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:26:35.526Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:27:05.514Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:27:05.532Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:27:35.515Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:27:35.531Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:28:05.523Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:28:05.530Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:28:35.533Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:28:35.551Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:29:05.541Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:29:05.559Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:29:35.559Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:29:35.568Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:30:05.559Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:30:05.575Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:30:35.563Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:30:35.571Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:31:05.584Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:31:05.601Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:31:37.520Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:31:37.532Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:32:07.528Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:32:07.546Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:32:39.851Z] 📩 GET request received at /favicon.ico
+[2025-12-15T13:32:55.780Z] 📩 POST request received at /login
+[2025-12-15T13:32:55.782Z] 🧾 Request Body: {"email":"gugulothusai877@gmail.com","password":"admin123"}
+[2025-12-15T13:32:57.508Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:32:57.554Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:32:58.517Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:32:58.546Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:33:26.248Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:33:26.274Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:33:56.260Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:33:56.279Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:34:12.316Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:34:12.346Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:34:26.266Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:34:26.286Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:34:51.548Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:34:51.563Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:34:56.580Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:34:56.622Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:35:18.398Z] 📩 POST request received at /login
+[2025-12-15T13:35:18.400Z] 🧾 Request Body: {"email":"ganesh123@gmail.com","password":"inspector123"}
+[2025-12-15T13:35:18.636Z] 📩 GET request received at /my/academic-forms?email=ganesh123%40gmail.com
+[2025-12-15T13:35:26.581Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:35:26.605Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:35:30.785Z] 📩 POST request received at /login
+[2025-12-15T13:35:30.786Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","password":"Shannu@123"}
+[2025-12-15T13:35:31.025Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:35:35.537Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:35:41.033Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:35:56.604Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:35:56.657Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:36:26.899Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:36:26.936Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:36:57.088Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:36:57.114Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:37:27.103Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:37:27.132Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:37:42.193Z] 📩 POST request received at /submit-academic-form
+[2025-12-15T13:37:42.194Z] 🧾 Request Body: {"type":"inspection","collegeName":"CBD COLLEGE","collegeCode":"CBD786","Programme":"GEN","submittedBy":"cmshannu@gmail.com","submittedByName":"cm","academicYear":"2024-25","submissionDate":"2025-12-15T13:37:42.190Z","formData":{"collegeName":"CBD COLLEGE","collegeCode":"CBD786","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0084-09-25","course":"GEN","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"status":"pending_review"}
+[2025-12-15T13:37:42.209Z] 📩 POST request received at /save-academic-form
+[2025-12-15T13:37:42.210Z] 🧾 Request Body: {"email":"cmshannu@gmail.com","formData":{"collegeName":"CBD COLLEGE","collegeCode":"CBD786","field_2":"","field_3":"","field_4":"","field_5":"","field_6":"Non Minority","field_7":"0084-09-25","course":"GEN","field_9":"","field_10":"Yes","field_11":"Fulfilled","field_12":"Yes","field_13":"","field_14":"","field_15":"","field_16":"","field_17":"Available","field_18":"","field_19":"","field_20":"","field_21":"","field_22":"","field_23":"","field_24":"","field_25":"","field_26":"","field_27":"","field_28":"","field_29":"","field_30":"","field_31":"","field_32":"","field_33":"","field_34":"","field_35":"","field_36":"","field_37":"","field_38":"","field_39":"","field_40":"","field_41":"","field_42":"","field_43":"","field_44":"","field_45":"","field_46":"","field_47":"","field_48":"","field_49":"","field_50":"","field_51":"","field_52":"","field_53":"","field_54":"","field_55":"","field_56":"","field_57":"","field_58":"","field_59":"","field_60":"","field_61":"","field_62":"","field_63":"","field_64":"","field_65":"","field_66":"","field_67":"","field_68":"","field_69":"","field_70":null,"field_71":null,"field_72":null,"field_73":null,"field_74":"","field_75":"","field_76":"","field_77":"","field_78":"","field_79":"","field_80":"","field_81":"","field_82":"","field_83":"","field_84":"","field_85":"","field_86":"","field_87":"","field_88":"","field_89":"","field_90":"","field_91":"Available","field_92":"","field_93":"Available","field_94":"","field_95":"Available","field_96":"","field_97":"Available","field_98":"","field_99":"Available","field_100":"","field_101":"","field_102":"","field_103":null},"formType":"inspection"}
+[2025-12-15T13:37:42.272Z] 📩 GET request received at /my/academic-forms?email=cmshannu%40gmail.com
+[2025-12-15T13:37:57.119Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:37:57.153Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:38:28.988Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:38:29.035Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:38:29.992Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:38:30.001Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:38:32.312Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:38:32.333Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:38:36.984Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:38:36.994Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:38:57.162Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:38:57.177Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:39:07.448Z] 📩 GET request received at /admin/academic-forms
+[2025-12-15T13:39:07.465Z] 📩 GET request received at /admin/forms
+[2025-12-15T13:40:39.314Z] 📩 POST request received at /send-otp
+[2025-12-15T13:40:39.315Z] 🧾 Request Body: {"email":"gandhamjayanth19@gmail.com","userName":"USER7"}
+[2025-12-15T13:42:02.310Z] 📩 POST request received at /send-otp
+[2025-12-15T13:42:02.311Z] 🧾 Request Body: {"email":"jayanthgandham19@gmail.com","userName":"USER7"}
+[2025-12-15T13:42:35.321Z] 📩 POST request received at /verify-otp
+[2025-12-15T13:42:35.323Z] 🧾 Request Body: {"email":"jayanthgandham19@gmail.com","otp":"542854"}
+[2025-12-15T13:43:07.299Z] 📩 POST request received at /register
+[2025-12-15T13:43:07.300Z] 🧾 Request Body: {"name":"USER7","email":"jayanthgandham19@gmail.com","password":"user@123456"}
+[2025-12-15T13:43:48.357Z] 📩 POST request received at /login
+[2025-12-15T13:43:48.358Z] 🧾 Request Body: {"email":"jayanthgandham19@gmail.com","password":"user@123456"}
+[2025-12-15T13:43:48.672Z] 📩 GET request received at /my/academic-forms?email=jayanthgandham19%40gmail.com
+[2025-12-16T14:29:23.056Z] 📩 GET request received at /favicon.ico

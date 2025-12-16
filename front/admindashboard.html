@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AUDIT CELL - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #2196F3, #64B5F6);
+      color: #000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Banner */
+    .mgu-header {
+      width: 100%;
+      background-color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .mgu-header h1 {
+      margin: 0;
+      color: #0047b3;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .mgu-header p {
+      margin: 5px 0 0 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* Audit cell bar */
+    .audit-bar {
+      background-color: #0047b3;
+      text-align: center;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* Dashboard layout */
+    .dashboard {
+      display: flex;
+      flex: 1;
+      min-height: calc(100vh - 140px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: #1976d2;
+      padding: 25px 20px;
+      color: white;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    .sidebar h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin: 8px 0;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+    .sidebar ul li a i {
+      margin-right: 12px;
+      font-size: 18px;
+    }
+    .sidebar ul li a:hover {
+      background: #0047b3;
+      transform: translateX(5px);
+    }
+    .sidebar ul li a.active {
+      background: #0047b3;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .sidebar ul li:last-child a {
+      color: #ff6b6b;
+      font-weight: 600;
+      border: 1px solid rgba(255,107,107,0.3);
+    }
+
+    /* Content area */
+    .content {
+      flex: 1;
+      padding: 25px;
+      color: #333;
+      background: #f8f9fa;
+      overflow-y: auto;
+    }
+
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-bottom: 35px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      border-left: 5px solid #2196F3;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .stat-card.total { border-left-color: #2196F3; }
+    .stat-card.pending { border-left-color: #FF9800; }
+    .stat-card.approved { border-left-color: #4CAF50; }
+    .stat-card.rejected { border-left-color: #f44336; }
+
+    .stat-card h3 {
+      margin: 0 0 12px 0;
+      color: #666;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-card .number {
+      font-size: 42px;
+      font-weight: 700;
+      color: #2196F3;
+      margin-bottom: 8px;
+    }
+
+    .stat-card.total .number { color: #2196F3; }
+    .stat-card.pending .number { color: #FF9800; }
+    .stat-card.approved .number { color: #4CAF50; }
+    .stat-card.rejected .number { color: #f44336; }
+
+    .stat-card .trend {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .stat-card .trend.positive { color: #4CAF50; }
+    .stat-card .trend.negative { color: #f44336; }
+
+    /* Submissions Table */
+    .table-container {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
+
+    .table-header {
+      padding: 20px 25px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: between;
+      align-items: center;
+    }
+
+    .table-header h3 {
+      margin: 0;
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .table-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      font-weight: 600;
+      color: #333;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+
+    .status-badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status-approved {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status-rejected {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    .btn-view {
+      background: #2196F3;
+      color: white;
+    }
+
+    .btn-view:hover {
+      background: #1976d2;
+    }
+
+    .btn-approve {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-approve:hover {
+      background: #45a049;
+    }
+
+    .btn-reject {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-reject:hover {
+      background: #d32f2f;
+    }
+
+    .btn-download {
+      background: #FF9800;
+      color: white;
+    }
+
+    .btn-download:hover {
+      background: #f57c00;
+    }
+
+    .btn-refresh {
+      background: #9C27B0;
+      color: white;
+    }
+
+    .btn-refresh:hover {
+      background: #7b1fa2;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background: white;
+      padding: 0;
+      border-radius: 12px;
+      max-width: 900px;
+      max-height: 85vh;
+      overflow: hidden;
+      width: 95%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      padding: 25px 30px;
+      border-bottom: 1px solid #eee;
+      background: #f8f9fa;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      color: #333;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #666;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .close-modal:hover {
+      background: #e0e0e0;
+    }
+
+    .modal-body {
+      padding: 30px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .form-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .detail-section {
+      margin-bottom: 30px;
+    }
+
+    .detail-section h3 {
+      margin: 0 0 15px 0;
+      color: #2196F3;
+      font-size: 18px;
+      font-weight: 600;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .detail-group {
+      margin-bottom: 15px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #2196F3;
+    }
+
+    .detail-group label {
+      font-weight: 600;
+      color: #555;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .detail-group span {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .modal-footer {
+      padding: 20px 30px;
+      border-top: 1px solid #eee;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Search and Filters */
+    .search-filters {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 45px 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #2196F3;
+      box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .filter-select {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* No data state */
+    .no-data {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+    }
+
+    .no-data i {
+      font-size: 64px;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    .no-data h3 {
+      margin: 0 0 10px 0;
+      color: #666;
+      font-size: 20px;
+    }
+
+    .no-data p {
+      margin: 0;
+      color: #999;
+    }
+
+    /* Loading spinner */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #2196F3;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .form-details {
+        grid-template-columns: 1fr;
+      }
+      
+      .search-filters {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-box {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        min-height: auto;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .modal-content {
+        width: 98%;
+        margin: 10px;
+      }
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      z-index: 2000;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      max-width: 400px;
+    }
+    
+    .notification.success { background: #4CAF50; }
+    .notification.error { background: #f44336; }
+    .notification.info { background: #2196F3; }
+  </style>
+</head>
+<body>
+  <!-- Notification System -->
+  <div id="notification" class="notification"></div>
+
+  <!-- Top Banner -->
+  <div class="mgu-header">
+    <h1>MAHATMA GANDHI UNIVERSITY - AUDIT CELL</h1>
+    <p>Automated Academic Auditing System - Admin Dashboard</p>
+  </div>
+
+  <!-- Audit Cell Bar -->
+  <div class="audit-bar">
+    AUTOMATED ACADEMIC AUDITING SYSTEM
+  </div>
+
+  <!-- Dashboard Section -->
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>📊 Dashboard</h2>
+      <ul>
+        <li><a href="#" class="nav-link active" data-section="overview"><i>📈</i> Overview</a></li>
+        <li><a href="#" class="nav-link" data-section="submissions"><i>📋</i>Submissions</a></li>
+         <li><a href="#" class="nav-link" data-section="submission"><i>🈸</i> Inspection Submissions</a></li>
+        <li><a href="#" class="nav-link" data-section="colleges"><i>🏫</i> Colleges</a></li>
+        <li><a href="#" class="nav-link" data-section="reports"><i>📊</i> Reports & Analytics</a></li>
+        <li><a href="#" class="nav-link" data-section="settings"><i>⚙️</i> Settings</a></li>
+        <li><a href="#" id="logoutBtn"><i>🚪</i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Overview Section -->
+      <div id="overview-section" class="section active">
+        <h1 style="margin-bottom: 10px;">Welcome to Audit Cell Dashboard</h1>
+        <p style="color: #666; margin-bottom: 30px;">Monitor and manage academic information submissions from colleges across the university.</p>
+        
+        <div class="stats-grid">
+          <div class="stat-card total">
+            <h3>Total Submissions</h3>
+            <div class="number" id="totalSubmissions">0</div>
+            <div class="trend positive">+12% from last month</div>
+          </div>
+          <div class="stat-card pending">
+            <h3>Pending Review</h3>
+            <div class="number" id="pendingSubmissions">0</div>
+            <div class="trend">Awaiting action</div>
+          </div>
+          <div class="stat-card approved">
+            <h3>Approved</h3>
+            <div class="number" id="approvedSubmissions">0</div>
+            <div class="trend positive">+8% from last month</div>
+          </div>
+          <div class="stat-card rejected">
+            <h3>Rejected</h3>
+            <div class="number" id="rejectedSubmissions">0</div>
+            <div class="trend negative">-3% from last month</div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Recent Submissions</h3>
+            <div class="table-actions">
+              <button class="btn btn-refresh btn-sm" onclick="loadSubmissions()">
+                <i>🔄</i> Refresh
+              </button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>College Name</th>
+                <th>College Code</th>
+                <th>Submitted By</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recentSubmissions">
+              <tr>
+                <td colspan="6" class="no-data">
+                  <div>
+                    <i>📊</i>
+                    <h3>No submissions yet</h3>
+                    <p>Academic form submissions will appear here</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Submissions Section -->
+      <div id="submissions-section" class="section">
+        <h1 style="margin-bottom: 10px;">Academic Submissions</h1>
+        <p style="color: #666; margin-bottom: 25px;">Review and manage all academic information submissions from colleges.</p>
+        
+        <div class="search-filters">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search by college name, code, or email...">
+            <span class="search-icon">🔍</span>
+          </div>
+          <div class="filter-group">
+            <select class="filter-select" id="statusFilter">
+              <option value="">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+            </select>
+            <select class="filter-select" id="dateFilter">
+              <option value="">All Time</option>
+              <option value="today">Today</option>
+              <option value="week">This Week</option>
+              <option value="month">This Month</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <div class="table-header">
+            <h3>All Submissions</h3>
+            <div class="table-actions">
+              <button class="btn btn-refresh btn-sm" onclick="loadSubmissions()">
+                <i>🔄</i> Refresh
+              </button>
+              <button class="btn btn-download btn-sm" onclick="exportSubmissions()">
+                <i>📥</i> Export
+              </button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>College Name</th>
+                <th>College Code</th>
+                <th>Programme</th>
+                <th>Submitted By</th>
+                <th>Submission Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="allSubmissions">
+              <tr>
+                <td colspan="7" class="no-data">
+                  <div>
+                    <i>📋</i>
+                    <h3>No submissions found</h3>
+                    <p>Academic form submissions will appear here once submitted</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Inspection Submissions Section -->
+      <div id="submission-section" class="section">
+        <h1 style="margin-bottom: 10px;">Inspection Submissions</h1>
+        <p style="color: #666; margin-bottom: 25px;">Review and manage all inspection reports submitted by committees.</p>
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Inspection Submissions</h3>
+            <div class="table-actions">
+              <button class="btn btn-refresh btn-sm" onclick="loadSubmissions().then(() => renderInspectionTable()).catch(() => renderInspectionTable())">
+                <i>🔄</i> Refresh
+              </button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                  <th>College Name</th>
+                  <th>Course</th>
+                  <th>Date of Inspection</th>
+                  <th>Submitted By</th>
+                  <th>Submission Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inspectionSubmissions">
+              <tr>
+                <td colspan="7" class="no-data">
+                  <div>
+                    <i>🈸</i>
+                    <h3>No inspection submissions found</h3>
+                    <p>Inspection reports will appear here once submitted</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Colleges Section -->
+      <div id="colleges-section" class="section">
+        <h1 style="margin-bottom: 10px;">Colleges Management</h1>
+        <p style="color: #666; margin-bottom: 25px;">Manage college information and track submission history.</p>
+        <div class="no-data">
+          <i>🏫</i>
+          <h3>College Management</h3>
+          <p>College management features will be available soon</p>
+        </div>
+      </div>
+
+      <!-- Reports Section -->
+      <div id="reports-section" class="section">
+        <h1 style="margin-bottom: 10px;">Reports & Analytics</h1>
+        <p style="color: #666; margin-bottom: 25px;">Generate comprehensive reports and view analytics.</p>
+        <div class="no-data">
+          <i>📊</i>
+          <h3>Reports & Analytics</h3>
+          <p>Advanced reporting features will be available soon</p>
+        </div>
+      </div>
+
+      <!-- Settings Section -->
+      <div id="settings-section" class="section">
+        <h1 style="margin-bottom: 10px;">Settings</h1>
+        <p style="color: #666; margin-bottom: 25px;">Configure system settings and preferences.</p>
+        <div class="no-data">
+          <i>⚙️</i>
+          <h3>System Settings</h3>
+          <p>Settings configuration will be available soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submission Details Modal -->
+  <div id="submissionModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Submission Details</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="submissionDetails">
+        <!-- Submission details will be populated here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-approve" id="approveBtn">Approve Submission</button>
+        <button type="button" class="btn btn-reject" id="rejectBtn">Reject Submission</button>
+        <button type="button" class="btn btn-view" id="generateAffiliationBtn">Generate Affiliation Order</button>
+        <button type="button" class="btn btn-view" id="closeModalBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script>
+    // Global variables
+    let submissions = [];
+    let currentSubmissionId = null;
+    let filteredSubmissions = [];
+
+    // DOM Elements
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+    const modal = document.getElementById('submissionModal');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const closeModalBtn2 = document.getElementById('closeModalBtn');
+    const submissionDetails = document.getElementById('submissionDetails');
+    const approveBtn = document.getElementById('approveBtn');
+    const rejectBtn = document.getElementById('rejectBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const searchInput = document.getElementById('searchInput');
+    const statusFilter = document.getElementById('statusFilter');
+    const dateFilter = document.getElementById('dateFilter');
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.className = `notification ${type}`;
+      notification.style.display = 'block';
+      
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 5000);
+    }
+
+    // Navigation
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = link.getAttribute('data-section');
+        
+        // Update active nav link
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Hide all sections
+        sections.forEach(s => s.classList.remove('active'));
+        
+        // Show selected section
+        document.getElementById(`${section}-section`).classList.add('active');
+        
+        // Load data for the section
+        if (section === 'overview' || section === 'submissions') {
+          loadSubmissions();
+        } else if (section === 'submission') {
+          // 'submission' is the inspection submissions section
+          loadSubmissions().then(() => {
+            renderInspectionTable();
+          }).catch(err => {
+            console.error('Error loading submissions for inspection view:', err);
+            renderInspectionTable();
+          });
+        }
+      });
+    });
+
+    // Modal functionality
+    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+    closeModalBtn2.addEventListener('click', () => modal.style.display = 'none');
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Search and filter functionality
+    searchInput.addEventListener('input', filterSubmissions);
+    statusFilter.addEventListener('change', filterSubmissions);
+    dateFilter.addEventListener('change', filterSubmissions);
+
+    // Filter submissions based on search and filters
+    function filterSubmissions() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const statusValue = statusFilter.value;
+      const dateValue = dateFilter.value;
+      
+      filteredSubmissions = submissions.filter(submission => {
+        // Search filter
+        const matchesSearch = 
+          submission.collegeName.toLowerCase().includes(searchTerm) ||
+          submission.collegeCode.toLowerCase().includes(searchTerm) ||
+          submission.submittedBy.toLowerCase().includes(searchTerm) ||
+          (submission.programme && submission.programme.toLowerCase().includes(searchTerm));
+        
+        // Status filter
+        const matchesStatus = !statusValue || submission.status === statusValue;
+        
+        // Date filter
+        let matchesDate = true;
+        if (dateValue) {
+          const submissionDate = new Date(submission.submittedAt);
+          const today = new Date();
+          
+          switch (dateValue) {
+            case 'today':
+              matchesDate = submissionDate.toDateString() === today.toDateString();
+              break;
+            case 'week':
+              const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+              matchesDate = submissionDate >= weekAgo;
+              break;
+            case 'month':
+              const monthAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+              matchesDate = submissionDate >= monthAgo;
+              break;
+          }
+        }
+        
+        return matchesSearch && matchesStatus && matchesDate;
+      });
+      
+      updateSubmissionsTable();
+    }
+
+    // Load submissions from server
+    async function loadSubmissions() {
+      try {
+        showNotification('Loading submissions...', 'info');
+        
+        // Try to load DB-backed forms
+        const dbResult = await makeRequest(API_CONFIG.ENDPOINTS.ADMIN.FORMS).catch(err => {
+          console.warn('DB forms fetch failed', err);
+          return null;
+        });
+
+        // Try to load file-based forms too
+        const fileResult = await makeRequest(API_CONFIG.ENDPOINTS.ADMIN.FILE_FORMS).catch(err => {
+          console.warn('File forms fetch failed', err);
+          return null;
+        });
+
+        // Reset submission arrays
+        submissions = [];
+        filteredSubmissions = [];
+
+        const dbForms = (dbResult && dbResult.success && Array.isArray(dbResult.forms)) ? dbResult.forms : [];
+        const fileForms = (fileResult && fileResult.success && Array.isArray(fileResult.forms)) ? fileResult.forms : [];
+
+        // Merge forms, preferring DB records when ids conflict
+        const merged = [...dbForms];
+        fileForms.forEach(ff => {
+          const exists = merged.find(m => String(m.id || m.formId) === String(ff.id || ff.formId) || (ff.userEmail && String(m.submittedBy) === String(ff.userEmail)));
+          if (!exists) merged.push(ff);
+        });
+
+        const forms = merged;
+        console.log('Processing', forms.length, 'submissions');
+
+        // Process all forms
+        forms.forEach(form => {
+          try {
+            // Extract and normalize form data
+            let formData = {};
+            try {
+              if (typeof form.formData === 'string') {
+                formData = JSON.parse(form.formData);
+              } else {
+                formData = form.formData || {};
+              }
+            } catch (e) {
+              console.warn('Error parsing form data:', e);
+              formData = form.formData || {};
+            }
+
+            // Create normalized submission with all possible data locations
+            const submission = {
+              ...form,
+              // Determine form type from stored record (supports 'inspection' and 'academic')
+              formType: (form.type || form.formType || (form.formData && form.formData.type) || 'academic').toString().toLowerCase(),
+              // Normalize status to simple values (pending/approved/rejected/etc.)
+              status: (form.status || 'pending').toString().toLowerCase(),
+              id: form.id || form.formId,
+              collegeName: formData.collegeName || form.collegeName || formData.college_name || '',
+              collegeCode: formData.collegeCode || form.collegeCode || formData.college_code || '',
+              programme: formData.programme || form.programme || formData.course || '',
+              intake: formData.intake || form.intake || formData.student_intake || '',
+              submittedBy: form.submittedBy || form.email || formData.email || '',
+              submittedAt: form.submittedAt || form.created_at || new Date().toISOString(),
+              formData: {
+                ...formData,
+                collegeName: formData.collegeName || form.collegeName || formData.college_name || '',
+                collegeCode: formData.collegeCode || form.collegeCode || formData.college_code || '',
+                programme: formData.programme || form.programme || formData.course || '',
+                intake: formData.intake || form.intake || formData.student_intake || ''
+              }
+            };
+
+            // Log processed form
+            console.log('Processed form:', {
+              id: submission.id,
+              college: submission.collegeName,
+              programme: submission.programme
+            });
+
+            submissions.push(submission);
+          } catch (err) {
+            console.error('Error processing form:', err);
+          }
+        });
+
+        // If no submissions were processed successfully
+        if (submissions.length === 0) {
+          throw new Error('No submissions could be processed');
+        }
+
+        // Sort by submission date descending
+        submissions.sort((a, b) => new Date(b.submittedAt || b.created_at) - new Date(a.submittedAt || a.created_at));
+        filteredSubmissions = [...submissions];
+        
+        // Update UI
+        updateDashboard();
+        updateSubmissionsTable();
+        showNotification('Submissions loaded successfully!', 'success');
+      } catch (error) {
+        console.error('Error loading submissions:', error);
+        showNotification('Failed to load submissions: ' + error.message, 'error');
+        
+        // Fallback to sample data for demonstration
+        loadSampleData();
+      }
+    }
+
+    // Sample data for demonstration
+    function loadSampleData() {
+      submissions = [
+        {
+          id: '1',
+          collegeName: 'MG College of Engineering',
+          collegeCode: 'MGCE001',
+          programme: 'B.Tech Computer Science and Engineering',
+          submittedBy: 'principal@mgce.edu',
+          submittedByName: 'Dr. Rajesh Kumar',
+          submittedAt: new Date().toISOString(),
+          status: 'pending',
+          formData: {
+            collegeName: 'MG College of Engineering',
+            collegeCode: 'MGCE001',
+            programme: 'B.Tech Computer Science and Engineering',
+            intake: '120',
+            collegeAddress: 'MG Road, Nalgonda, Telangana - 508001',
+            mobile: '9876543210',
+            collegeEmail: 'principal@mgce.edu',
+            principalName: 'Dr. Rajesh Kumar',
+            principalQualifications: 'Ph.D in Computer Science',
+            totalFaculty: '45',
+            classrooms: '25',
+            labs: '8',
+            libraryBooks: '15000'
+          }
+        },
+        {
+          id: '2',
+          collegeName: 'Gandhi Institute of Technology',
+          collegeCode: 'GIT002',
+          programme: 'B.Tech Electronics and Communication Engineering',
+          submittedBy: 'director@git.edu',
+          submittedByName: 'Dr. Priya Sharma',
+          submittedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+          status: 'approved',
+          formData: {
+            collegeName: 'Gandhi Institute of Technology',
+            collegeCode: 'GIT002',
+            programme: 'B.Tech Electronics and Communication Engineering',
+            intake: '90',
+            collegeAddress: 'Tech Park, Hyderabad Road, Nalgonda - 508002',
+            mobile: '8765432109',
+            collegeEmail: 'director@git.edu',
+            principalName: 'Dr. Priya Sharma',
+            principalQualifications: 'M.Tech, Ph.D',
+            totalFaculty: '38',
+            classrooms: '20',
+            labs: '6',
+            libraryBooks: '12000'
+          }
+        },
+        {
+          id: '3',
+          collegeName: 'Sri Krishna College of Arts and Science',
+          collegeCode: 'SKCAS003',
+          programme: 'Bachelor of Commerce (B.Com)',
+          submittedBy: 'dean@skcas.edu',
+          submittedByName: 'Dr. Anand Rao',
+          submittedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+          status: 'pending',
+          formData: {
+            collegeName: 'Sri Krishna College of Arts and Science',
+            collegeCode: 'SKCAS003',
+            programme: 'Bachelor of Commerce (B.Com)',
+            intake: '160',
+            collegeAddress: 'College Road, Warangal, Telangana - 506001',
+            mobile: '9988776655',
+            collegeEmail: 'dean@skcas.edu',
+            principalName: 'Dr. Anand Rao',
+            principalQualifications: 'Ph.D in Commerce',
+            totalFaculty: '35',
+            classrooms: '30',
+            labs: '2',
+            libraryBooks: '18000'
+          }
+        },
+        {
+          id: '4',
+          collegeName: 'Nagarjuna Institute of Medical Sciences',
+          collegeCode: 'NIMS004',
+          programme: 'Bachelor of Medicine and Bachelor of Surgery (MBBS)',
+          submittedBy: 'director@nims.edu',
+          submittedByName: 'Dr. Lakshmi Prasad',
+          submittedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+          status: 'pending',
+          formData: {
+            collegeName: 'Nagarjuna Institute of Medical Sciences',
+            collegeCode: 'NIMS004',
+            programme: 'Bachelor of Medicine and Bachelor of Surgery (MBBS)',
+            intake: '100',
+            collegeAddress: 'Health City, Khammam, Telangana - 507002',
+            mobile: '9876543211',
+            collegeEmail: 'director@nims.edu',
+            principalName: 'Dr. Lakshmi Prasad',
+            principalQualifications: 'MD, DM',
+            totalFaculty: '80',
+            classrooms: '15',
+            labs: '12',
+            libraryBooks: '25000'
+          }
+        },
+        {
+          id: '5',
+          collegeName: 'Hyderabad School of Management',
+          collegeCode: 'HSM005',
+          programme: 'Master of Business Administration (MBA)',
+          submittedBy: 'admin@hsm.edu',
+          submittedByName: 'Dr. Suresh Reddy',
+          submittedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+          status: 'approved',
+          formData: {
+            collegeName: 'Hyderabad School of Management',
+            collegeCode: 'HSM005',
+            programme: 'Master of Business Administration (MBA)',
+            intake: '120',
+            collegeAddress: 'Business District, Hyderabad, Telangana - 500081',
+            mobile: '9876543222',
+            collegeEmail: 'admin@hsm.edu',
+            principalName: 'Dr. Suresh Reddy',
+            principalQualifications: 'Ph.D in Management',
+            totalFaculty: '25',
+            classrooms: '12',
+            labs: '2',
+            libraryBooks: '20000'
+          }
+        }
+      ];
+      filteredSubmissions = [...submissions];
+      updateDashboard();
+      updateSubmissionsTable();
+      showNotification('Loaded sample data for demonstration', 'info');
+    }
+
+    // Update dashboard statistics
+    function updateDashboard() {
+      const total = submissions.length;
+      // Normalize statuses so DB enum values map correctly to dashboard counts
+      const normalized = submissions.map(s => (s.status || '').toString().toLowerCase());
+      const pending = normalized.filter(st => st.includes('pending')).length;
+      const approved = normalized.filter(st => st === 'approved').length;
+      const rejected = normalized.filter(st => st === 'rejected').length;
+
+      document.getElementById('totalSubmissions').textContent = total;
+      document.getElementById('pendingSubmissions').textContent = pending;
+      document.getElementById('approvedSubmissions').textContent = approved;
+      document.getElementById('rejectedSubmissions').textContent = rejected;
+
+      // Update recent submissions (last 5)
+      const recentSubmissions = submissions.slice(-5).reverse();
+      const recentTable = document.getElementById('recentSubmissions');
+      recentTable.innerHTML = '';
+
+      if (recentSubmissions.length === 0) {
+        recentTable.innerHTML = `
+          <tr>
+            <td colspan="6" class="no-data">
+              <div>
+                <i>📊</i>
+                <h3>No submissions yet</h3>
+                <p>Academic form submissions will appear here</p>
+              </div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      recentSubmissions.forEach(submission => {
+        const row = createSubmissionRow(submission);
+        recentTable.appendChild(row);
+      });
+    }
+
+    // Update all submissions table
+    function updateSubmissionsTable() {
+      const allTable = document.getElementById('allSubmissions');
+      allTable.innerHTML = '';
+
+      if (filteredSubmissions.length === 0) {
+        allTable.innerHTML = `
+          <tr>
+            <td colspan="7" class="no-data">
+              <div>
+                <i>📋</i>
+                <h3>No submissions found</h3>
+                <p>Try adjusting your search or filters</p>
+              </div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      filteredSubmissions.forEach(submission => {
+        const row = createSubmissionRow(submission, true);
+        allTable.appendChild(row);
+      });
+    }
+
+    // Render inspection submissions only
+    function renderInspectionTable() {
+      const table = document.getElementById('inspectionSubmissions');
+      if (!table) return;
+
+      // Filter inspection-only
+      const inspection = submissions.filter(s => (s.formType || '').toString().toLowerCase() === 'inspection');
+      table.innerHTML = '';
+
+      if (inspection.length === 0) {
+        table.innerHTML = `
+          <tr>
+            <td colspan="7" class="no-data">
+              <div>
+                <i>🈸</i>
+                <h3>No inspection submissions found</h3>
+                <p>Inspection reports will appear here</p>
+              </div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      inspection.forEach(submission => {
+        // For inspection rows, render course and inspection date as specific columns
+        const row = document.createElement('tr');
+
+        const submittedDate = new Date(submission.submittedAt || submission.created_at);
+        const formattedDate = `${submittedDate.toLocaleDateString()} ${submittedDate.toLocaleTimeString()}`;
+
+        const course = submission.formData?.course || submission.course || submission.programme || 'Not Specified';
+        const inspectionDate = submission.formData?.inspectionDate || submission.inspectionDate || submission.formData?.date_of_inspection || '';
+        const formattedInspectionDate = inspectionDate ? new Date(inspectionDate).toLocaleDateString() : 'N/A';
+
+        // Normalize status
+        const norm = (submission.status || '').toString().toLowerCase();
+        let statusBadge = '';
+        if (norm.includes('pending')) statusBadge = '<span class="status-badge status-pending">Pending</span>';
+        else if (norm === 'rejected') statusBadge = '<span class="status-badge status-rejected">Rejected</span>';
+        else if (norm === 'inspection_completed' || norm === 'approved') statusBadge = '<span class="status-badge status-approved">Completed</span>';
+
+        let actionButtons = `
+          <button type="button" class="btn btn-view btn-sm" onclick="viewSubmission('${submission.id}')">
+            <i>👁️</i> View
+          </button>`;
+        // For inspection forms, provide Pending / Completed actions similar to academic flow
+        if (submission.formType === 'inspection') {
+          if (norm.includes('pending') || norm.includes('inspection_pending')) {
+            // Allow marking completed while pending
+            actionButtons += `
+              <button type="button" class="btn btn-approve btn-sm" onclick="markInspectionCompleted('${submission.id}')">
+                <i>✓</i> Mark Completed
+              </button>`;
+          } else if (norm === 'inspection_completed' || norm === 'approved' || norm === 'completed') {
+            // Completed inspections are final: show Completed state and do NOT allow reverting to pending
+            actionButtons += `<button type="button" class="btn btn-view btn-sm" disabled style="opacity:0.85"><i>✅</i> Completed</button>`;
+          } else if (norm === 'rejected') {
+            actionButtons += `<button type="button" class="btn btn-reject btn-sm" disabled style="opacity:0.85"><i>✗</i> Rejected</button>`;
+          } else {
+            actionButtons += ``;
+          }
+        } else {
+          if (norm.includes('pending')) {
+            actionButtons += `
+              <button type="button" class="btn btn-approve btn-sm" onclick="approveSubmission('${submission.id}')">
+                <i>✓</i> Approve
+              </button>
+              <button type="button" class="btn btn-reject btn-sm" onclick="rejectSubmission('${submission.id}')">
+                <i>✗</i> Reject
+              </button>`;
+          } else if (norm === 'approved') {
+            actionButtons += `<button type="button" class="btn btn-view btn-sm" disabled style="opacity:0.85"><i>✅</i> Approved</button>`;
+          }
+        }
+
+        row.innerHTML = `
+          <td>${submission.collegeName}</td>
+          <td>${course}</td>
+          <td>${formattedInspectionDate}</td>
+          <td>${submission.submittedBy}</td>
+          <td>${formattedDate}</td>
+          <td>${statusBadge}</td>
+          <td>${actionButtons}</td>
+        `;
+
+        table.appendChild(row);
+      });
+    }
+
+    // Create submission table row
+    function createSubmissionRow(submission, showProgramme = false) {
+      const row = document.createElement('tr');
+      
+      const submittedDate = new Date(submission.submittedAt || submission.created_at);
+      const formattedDate = `${submittedDate.toLocaleDateString()} ${submittedDate.toLocaleTimeString()}`;
+      
+      // Normalize status
+      const norm = (submission.status || '').toString().toLowerCase();
+      
+      // Create appropriate status badge
+      let statusBadge = '';
+      let statusClass = '';
+      let statusText = 'Unknown';
+
+      if (norm.includes('pending')) {
+        statusClass = 'status-pending';
+        statusText = 'Pending';
+      } else if (norm === 'rejected') {
+        statusClass = 'status-rejected';
+        statusText = 'Rejected';
+      } else if (norm === 'inspection_scheduled') {
+        statusClass = 'status-pending';
+        statusText = 'Inspection Scheduled';
+      } else if (norm === 'inspection_completed') {
+        statusClass = 'status-approved';
+        statusText = 'Inspection Completed';
+      } else if (norm === 'approved') {
+        // For inspections, display 'Completed' instead of 'Approved' to reflect finalization
+        if ((submission.formType || '').toString().toLowerCase() === 'inspection') {
+          statusClass = 'status-approved';
+          statusText = 'Completed';
+        } else {
+          statusClass = 'status-approved';
+          statusText = 'Approved';
+        }
+      }
+
+      statusBadge = `<span class="status-badge ${statusClass}">${statusText}</span>`;
+
+      // If reviewedBy is present and status is completed/approved, show reviewer info
+      const reviewer = submission.reviewedByName || submission.reviewedBy || submission.reviewed_by || '';
+      if (reviewer && (statusText === 'Completed' || statusText === 'Approved')) {
+        statusBadge += `<div style="font-size:11px;color:#555;margin-top:6px;">Reviewed by: ${reviewer}</div>`;
+      }
+
+      // Add form type badge if showing in detail view
+      if (showProgramme) {
+        const formTypeBadge = submission.formType === 'inspection' ?
+          '<span class="status-badge" style="background: #E1BEE7; color: #4A148C">Inspection</span>' :
+          '<span class="status-badge" style="background: #BBDEFB; color: #0D47A1">Academic</span>';
+        statusBadge = `${formTypeBadge} ${statusBadge}`;
+      }
+
+      // Get programme from all possible locations
+      const programme = submission.formData?.programme || 
+                       submission.programme || 
+                       submission.formData?.academicDetails?.programme || '';
+      
+      const programmeCell = showProgramme ? 
+        `<td>${programme || submission.formData?.course || 'Not Specified'}</td>` : '';
+      
+      // Build action buttons based on state and type
+      let actionButtons = `
+        <button type="button" class="btn btn-view btn-sm" onclick="viewSubmission('${submission.id}')">
+          <i>👁️</i> View
+        </button>
+      `;
+
+      // Only show approve/reject for pending items
+      if (norm.includes('pending')) {
+        actionButtons += `
+          <button type="button" class="btn btn-approve btn-sm" onclick="approveSubmission('${submission.id}')">
+            <i>✓</i> Approve
+          </button>
+          <button type="button" class="btn btn-reject btn-sm" onclick="rejectSubmission('${submission.id}')">
+            <i>✗</i> Reject
+          </button>
+        `;
+      } else {
+        // For inspection submissions that are already approved/completed, show a disabled Completed indicator
+        if ((submission.formType || '').toString().toLowerCase() === 'inspection') {
+          if (norm === 'approved' || norm === 'inspection_completed' || statusText === 'Completed') {
+            actionButtons += `
+              <button type="button" class="btn btn-view btn-sm" disabled style="opacity:0.85">
+                <i>✅</i> Completed
+              </button>
+            `;
+          } else if (norm === 'rejected') {
+            actionButtons += `
+              <button type="button" class="btn btn-reject btn-sm" disabled style="opacity:0.85">
+                <i>✗</i> Rejected
+              </button>
+            `;
+          }
+        }
+      }
+      
+      // Special case: For approved academic forms, add generate button
+      if (norm === 'approved' && submission.formType === 'academic') {
+        actionButtons += `
+          <button type="button" class="btn btn-download btn-sm" onclick="generateAffiliation('${submission.id}')">
+            <i>📜</i> Generate Order
+          </button>
+        `;
+      }
+
+      // Also allow generating affiliation order for inspection submissions once completed/approved
+      if ((norm === 'inspection_completed' || norm === 'approved' || statusText === 'Completed') && (submission.formType || '').toString().toLowerCase() === 'inspection') {
+        actionButtons += `
+          <button type="button" class="btn btn-download btn-sm" onclick="generateAffiliation('${submission.id}')">
+            <i>📜</i> Generate Order
+          </button>
+        `;
+      }
+
+      row.innerHTML = `
+        <td>${submission.collegeName}</td>
+        <td>${submission.collegeCode}</td>
+        ${programmeCell}
+        <td>${submission.submittedBy}</td>
+        <td>${formattedDate}</td>
+        <td>${statusBadge}</td>
+        <td>${actionButtons}</td>
+      `;
+      
+      return row;
+    }
+
+    // View submission details
+    function viewSubmission(submissionId) {
+      // Find submission using both numeric and string ID comparison
+      const submission = submissions.find(s => {
+        const sId = String(s.id || s.formId || '').trim();
+        const targetId = String(submissionId).trim();
+        return sId === targetId;
+      });
+      
+      if (!submission) {
+        showNotification('Submission not found!', 'error');
+        return;
+      }
+      
+      currentSubmissionId = submissionId;
+      
+      // Merge data from both the submission object and its formData
+      const formData = {
+        ...submission,
+        ...(submission.formData || {}),
+        // Ensure basic fields are set from either source
+        collegeName: submission.formData?.collegeName || submission.collegeName || '',
+        collegeCode: submission.formData?.collegeCode || submission.collegeCode || '',
+        programme: submission.formData?.programme || submission.programme || '',
+        submittedBy: submission.submittedBy || submission.email || ''
+      };
+      
+      // Format the submission details for display
+      let detailsHTML = `
+        <div class="detail-section">
+          <h3>College Information</h3>
+          <div class="form-details">
+            <div class="detail-group">
+              <label>College Name:</label>
+              <span>${formData.collegeName || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>College Code:</label>
+              <span>${formData.collegeCode || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Programme:</label>
+              <span>${formData.programme || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Intake:</label>
+              <span>${formData.intake || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Date of Inspection:</label>
+              <span>${formData.inspectionDate || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Compliance Report Submitted:</label>
+              <span>${formData.complianceSubmitted || 'N/A'}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Contact Information</h3>
+          <div class="form-details">
+            <div class="detail-group">
+              <label>Postal Address:</label>
+              <span>${formData.collegeAddress || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Landline:</label>
+              <span>${formData.landline || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Mobile:</label>
+              <span>${formData.mobile || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Email ID:</label>
+              <span>${formData.collegeEmail || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Website:</label>
+              <span>${formData.website || 'N/A'}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Principal Information</h3>
+          <div class="form-details">
+            <div class="detail-group">
+              <label>Principal Name:</label>
+              <span>${formData.principalName || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Qualifications:</label>
+              <span>${formData.principalQualifications || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Appointed through MGU Selection:</label>
+              <span>${formData.principalAppointedMGU || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Date of Birth:</label>
+              <span>${formData.principalDOB || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Mobile No.:</label>
+              <span>${formData.principalMobile || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Email ID:</label>
+              <span>${formData.principalEmail || 'N/A'}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Infrastructure Details</h3>
+          <div class="form-details">
+            <div class="detail-group">
+              <label>Total Faculty:</label>
+              <span>${formData.totalFaculty || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Classrooms:</label>
+              <span>${formData.classrooms || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Labs:</label>
+              <span>${formData.labs || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Library Books:</label>
+              <span>${formData.libraryBooks || 'N/A'}</span>
+            </div>
+            <div class="detail-group">
+              <label>Digital Library:</label>
+              <span>${formData.digitalLibrary || 'N/A'}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      submissionDetails.innerHTML = detailsHTML;
+      
+      // Show/hide action buttons based on normalized status
+      const statusNorm = (submission.status || '').toString().toLowerCase();
+      if (statusNorm.includes('pending')) {
+        approveBtn.style.display = 'inline-block';
+        rejectBtn.style.display = 'inline-block';
+      } else {
+        approveBtn.style.display = 'none';
+        rejectBtn.style.display = 'none';
+      }
+
+      // Show/hide Generate Affiliation button when status is approved
+      const genBtn = document.getElementById('generateAffiliationBtn');
+      if (genBtn) {
+        if (statusNorm === 'approved' || statusNorm === 'inspection_completed') genBtn.style.display = 'inline-block';
+        else genBtn.style.display = 'none';
+      }
+      
+      // Show modal
+      modal.style.display = 'flex';
+    }
+
+    // Generate affiliation order for a submission (API-backed)
+    async function generateAffiliation(submissionId) {
+      const submission = submissions.find(s => String(s.id) === String(submissionId));
+      if (!submission) {
+        showNotification('Submission not found for affiliation generation', 'error');
+        return;
+      }
+
+      // Try server-side generation first
+      try {
+        showNotification('Generating affiliation order...', 'info');
+        const adminUser = (typeof authHelpers !== 'undefined' && authHelpers.getCurrentUser) ? authHelpers.getCurrentUser() : JSON.parse(localStorage.getItem('user') || '{}');
+        const payload = {
+          formId: submission.id,
+          formType: submission.formType || 'academic',
+          userEmail: submission.submittedBy,
+          generatedBy: adminUser?.email || 'admin'
+        };
+
+        const resp = await makeRequest(API_CONFIG.ENDPOINTS.ADMIN.GENERATE_AFFILIATION, 'POST', payload).catch(err => { throw err; });
+        if (resp && resp.success) {
+          showNotification('Affiliation order generated', 'success');
+          if (resp.orderPath) {
+            const url = API_CONFIG.BASE_URL.replace(/\/$/, '') + resp.orderPath;
+            window.open(url, '_blank');
+            return;
+          }
+        }
+        // Fallback: open the affiliation page that uses local data
+      } catch (err) {
+        console.warn('Server affiliation generation failed, falling back to client flow:', err);
+      }
+
+      // Fallback behavior: store data and open local affiliation page
+      try {
+        localStorage.setItem('affiliationData', JSON.stringify({
+          id: submission.id,
+          collegeName: submission.collegeName,
+          collegeCode: submission.collegeCode,
+          submittedBy: submission.submittedBy,
+          submittedByName: submission.submittedByName,
+          submittedAt: submission.submittedAt,
+          formData: submission.formData || {}
+        }));
+        window.open('affilation.html', '_blank');
+      } catch (err) {
+        console.error('Error preparing affiliation data fallback:', err);
+        showNotification('Failed to prepare affiliation order', 'error');
+      }
+    }
+
+    // Approve submission
+    async function approveSubmission(submissionId) {
+      if (!confirm('Are you sure you want to approve this submission?')) return;
+      
+      try {
+        showNotification('Approving submission...', 'info');
+        
+        // Get the submission data first
+        const submission = submissions.find(s => {
+          // Compare ids as strings and handle both string and numeric ids
+          const sId = String(s.id || s.formId || '').trim();
+          const targetId = String(submissionId).trim();
+          return sId === targetId;
+        });
+
+        if (!submission) {
+          throw new Error('Submission not found');
+        }
+
+        // Get normalized programme value — allow anything but sanitize and warn for clearly invalid values
+        let programme = (submission.formData?.programme || submission.programme || '').toString().trim();
+        if (!programme) {
+          console.warn('Programme missing for submission', submissionId);
+          programme = null; // send null so backend can ignore or preserve existing
+        } else if (programme.toLowerCase() === 'eeeeeeeeee' || programme.length < 3) {
+          console.warn('Suspicious programme value for submission', submissionId, programme);
+          // don't block approval for this; instead send null and let backend handle or log
+          programme = null;
+        }
+
+        // Validate only essential required fields (programme is optional)
+        const requiredFields = {
+          'submitter email': submission.submittedBy,
+          'college name': submission.formData?.collegeName || submission.collegeName,
+          'college code': submission.formData?.collegeCode || submission.collegeCode
+        };
+
+        // Check essential required fields
+        for (const [field, value] of Object.entries(requiredFields)) {
+          if (!value) {
+            throw new Error(`Missing required field: ${field}`);
+          }
+        }
+
+        // Get current admin user with fallbacks
+        let adminUser;
+        try {
+          if (typeof authHelpers !== 'undefined' && authHelpers.getCurrentUser) {
+            adminUser = authHelpers.getCurrentUser();
+          }
+          if (!adminUser) {
+            adminUser = JSON.parse(localStorage.getItem('user') || '{}');
+          }
+          if (!adminUser?.email) {
+            const sessionUser = sessionStorage.getItem('user');
+            if (sessionUser) {
+              adminUser = JSON.parse(sessionUser);
+            }
+          }
+        } catch (e) {
+          console.error('Error getting admin user:', e);
+        }
+
+        if (!adminUser?.email) {
+          throw new Error('Admin user not logged in or missing credentials. Please log in again.');
+        }
+
+        // Determine correct endpoint based on form type
+        let endpoint;
+        if (submission.formType === 'inspection') {
+          // Prefer a dedicated inspection update endpoint, but fall back to the generic update endpoint
+          endpoint = API_CONFIG?.ENDPOINTS?.ADMIN?.UPDATE_INSPECTION_FORM || API_CONFIG?.ENDPOINTS?.ADMIN?.UPDATE_FORM;
+          if (!endpoint) throw new Error('No update endpoint configured for inspection or academic forms');
+        } else {
+          endpoint = API_CONFIG?.ENDPOINTS?.ADMIN?.UPDATE_FORM;
+          if (!endpoint) throw new Error('Academic form update endpoint not configured');
+        }
+
+        console.log('Processing approval for submission:', {
+          id: submissionId,
+          type: submission.formType,
+          email: submission.submittedBy,
+          endpoint
+        });
+
+        // Prepare only basic required fields for approval
+        const isInspection = (submission.formType || '').toString().toLowerCase() === 'inspection';
+        const updateData = {
+          userEmail: submission.submittedBy,
+          formId: submissionId,
+          status: isInspection ? 'inspection_completed' : 'approved',
+          reviewedBy: adminUser.email,
+          reviewedByName: adminUser.name || 'Admin User',
+          comments: '',
+          // Only include essential form type and basic college info
+          formType: isInspection ? 'inspection' : 'academic',
+          collegeCode: submission.formData?.collegeCode || submission.collegeCode,
+          collegeName: submission.formData?.collegeName || submission.collegeName,
+          programme: programme
+        };
+
+        console.log('Sending update request with data:', updateData);
+
+        // Send update to server. If forms are missing on file-based storage, server may return 404.
+        // Instead of throwing immediately on that error, handle it gracefully and offer a forceApprove fallback.
+        let result;
+        try {
+          result = await makeRequest(endpoint, 'POST', updateData);
+        } catch (err) {
+          console.error('API error details:', err);
+          const msg = err?.message || (err && err.message) || '';
+          // If the user's stored JSON forms cannot be located, allow admin to force approval when possible
+          if (msg.includes('User forms not found') || msg.includes('Form not found')) {
+            // Notify admin but do not throw - give option to force approval
+            showNotification('Warning: user forms not found. Attempting database update if possible...', 'info');
+            // Try a second call with a forceUpdate flag; backend will still try DB update path.
+            try {
+              updateData.forceUpdate = true;
+              result = await makeRequest(endpoint, 'POST', updateData);
+            } catch (err2) {
+              console.error('Force update also failed:', err2);
+              // Surface server message to admin
+              const errMsg = (err2 && err2.message) ? err2.message : 'Approval failed after fallback attempt';
+              showNotification('Approval failed: ' + errMsg, 'error');
+              return;
+            }
+          } else {
+            showNotification('Approval failed: ' + (msg || 'Network error while approving submission'), 'error');
+            return;
+          }
+        }
+
+        if (!result) {
+          throw new Error('No response from server');
+        }
+
+        if (!result.success) {
+          throw new Error(result.message || 'Server rejected the approval');
+        }
+
+        // Update local data
+        submission.status = 'approved';
+        submission.reviewedBy = adminUser.email;
+        submission.reviewedByName = adminUser.name || 'Admin User';
+        submission.reviewDate = new Date().toISOString();
+        
+        updateDashboard();
+        updateSubmissionsTable();
+        modal.style.display = 'none';
+        showNotification('Submission approved successfully!', 'success');
+
+        // If server returned an order object (generated on update), open it
+        try {
+          if (result.order && result.order.orderPath) {
+            const url = API_CONFIG.BASE_URL.replace(/\/$/, '') + result.order.orderPath;
+            window.open(url, '_blank');
+            showNotification('Affiliation order opened', 'info');
+          } else {
+            // As a fallback, attempt to call generate-affiliation endpoint once
+            const genResp = await makeRequest(API_CONFIG.ENDPOINTS.ADMIN.GENERATE_AFFILIATION, 'POST', {
+              formId: submissionId,
+              formType: submission.formType || 'academic',
+              userEmail: submission.submittedBy
+            }).catch(() => null);
+
+            if (genResp && genResp.success && genResp.orderPath) {
+              const url = API_CONFIG.BASE_URL.replace(/\/$/, '') + genResp.orderPath;
+              window.open(url, '_blank');
+              showNotification('Affiliation order generated', 'info');
+            }
+          }
+        } catch (genErr) {
+          console.warn('Affiliation generation/open failed:', genErr);
+        }
+
+        // Special handling for inspection forms
+        if (submission.formType === 'inspection') {
+          showNotification('Inspection report marked as approved', 'info');
+        }
+      } catch (error) {
+        console.error('Error approving submission:', error);
+        
+        // Simplified error handling focusing on basic fields
+        let errorMsg;
+        if (error.message?.includes('Missing required field')) {
+          errorMsg = `Please ensure basic information is complete: ${error.message}`;
+        } else if (error.message?.includes('Admin user not logged in')) {
+          errorMsg = 'Your admin session has expired. Please log out and log in again.';
+        } else if (error.message?.toLowerCase()?.includes('network error') || error.message?.toLowerCase()?.includes('failed to fetch')) {
+          errorMsg = 'Connection error. Please try again.';
+        } else if (error.message?.includes('User forms not found') || error.message?.includes('Form not found') || error.message?.toLowerCase().includes('could not locate')) {
+          // Custom, clearer message when user file/forms are missing
+          errorMsg = 'Approval failed: User forms could not be located. The user may not have completed all required forms. You can retry, contact the user, or use force-approval if appropriate.';
+        } else {
+          console.debug('Approval error details:', error);
+          // Keep message generic for other errors
+          errorMsg = `Approval failed: ${error.message || 'Unknown error'}. Please check the submission details and try again.`;
+        }
+        
+        showNotification(errorMsg, 'error');
+        
+        // If it's an auth error, redirect to login after a delay
+        if (error.message?.includes('Admin user not logged in')) {
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 2000);
+        }
+      }
+    }
+
+    // Reject submission
+    async function rejectSubmission(submissionId) {
+      const reason = prompt('Please provide reason for rejection:');
+      if (reason === null) return; // User cancelled
+      if (!reason.trim()) {
+        showNotification('Rejection reason is required', 'error');
+        return;
+      }
+      
+      try {
+        showNotification('Rejecting submission...', 'info');
+
+        // Get the submission data first
+        const submission = submissions.find(s => String(s.id) === String(submissionId));
+        if (!submission) {
+          throw new Error('Submission not found');
+        }
+
+        // Validate submission has required data
+        if (!submission.submittedBy) {
+          throw new Error('Invalid submission: Missing submitter email');
+        }
+
+        // Get current admin user
+        const adminUser = (typeof authHelpers !== 'undefined' && authHelpers.getCurrentUser) ? 
+          authHelpers.getCurrentUser() : 
+          JSON.parse(localStorage.getItem('user') || '{}');
+
+        if (!adminUser?.email) {
+          throw new Error('Admin user not logged in or missing credentials');
+        }
+
+        // Determine correct endpoint based on form type
+        const endpoint = submission.formType === 'inspection' ?
+          (API_CONFIG.ENDPOINTS.ADMIN.UPDATE_INSPECTION_FORM || API_CONFIG.ENDPOINTS.ADMIN.UPDATE_FORM) :
+          API_CONFIG.ENDPOINTS.ADMIN.UPDATE_FORM;
+
+        const result = await makeRequest(endpoint, 'POST', {
+          userEmail: submission.submittedBy,
+          formId: submissionId, 
+          status: 'rejected',
+          reviewedBy: adminUser.email,
+          reviewedByName: adminUser.name || 'Admin User',
+          comments: reason.trim(),
+          formType: submission.formType || 'academic',
+          reviewDate: new Date().toISOString()
+        }).catch(err => {
+          throw new Error(err.message || 'Network error while rejecting submission');
+        });
+
+        if (!result) {
+          throw new Error('No response from server');
+        }
+
+        if (!result.success) {
+          throw new Error(result.message || 'Server rejected the rejection request');
+        }
+
+        // Update local data
+        submission.status = 'rejected';
+        submission.reviewedBy = adminUser.email;
+        submission.reviewedByName = adminUser.name || 'Admin User';
+        submission.reviewDate = new Date().toISOString();
+        submission.rejectionReason = reason.trim();
+        
+        updateDashboard();
+        updateSubmissionsTable();
+        modal.style.display = 'none';
+        
+        // Show appropriate notification based on form type
+        if (submission.formType === 'inspection') {
+          showNotification('Inspection report rejected. Notification sent to college.', 'success');
+        } else {
+          showNotification('Academic submission rejected. Notification sent to college.', 'success');
+        }
+
+      } catch (error) {
+        console.error('Error rejecting submission:', error);
+        const errorMsg = error.message === 'Failed to reject submission: User forms not found' ?
+          'Could not find forms associated with this submission. Please ensure all required forms are submitted.' :
+          `Failed to reject submission: ${error.message}`;
+        showNotification(errorMsg, 'error');
+      }
+    }
+
+    // Mark inspection as completed
+    async function markInspectionCompleted(submissionId) {
+      if (!confirm('Mark this inspection as completed?')) return;
+      try {
+        showNotification('Marking inspection as completed...', 'info');
+        const submission = submissions.find(s => String(s.id) === String(submissionId));
+        if (!submission) throw new Error('Submission not found');
+
+        const adminUser = (typeof authHelpers !== 'undefined' && authHelpers.getCurrentUser) ? authHelpers.getCurrentUser() : JSON.parse(localStorage.getItem('user') || '{}');
+        if (!adminUser?.email) throw new Error('Admin user not logged in or missing credentials');
+
+        const endpoint = API_CONFIG.ENDPOINTS.ADMIN.UPDATE_FORM;
+        const result = await makeRequest(endpoint, 'POST', {
+          userEmail: submission.submittedBy,
+          formId: submissionId,
+          status: 'inspection_completed',
+          reviewedBy: adminUser.email,
+          reviewedByName: adminUser.name || 'Admin',
+          formType: 'inspection'
+        });
+
+        if (!result || !result.success) throw new Error(result?.message || 'Server rejected the request');
+
+        submission.status = 'inspection_completed';
+        submission.reviewedBy = adminUser.email;
+        submission.reviewDate = new Date().toISOString();
+        updateDashboard(); updateSubmissionsTable(); renderInspectionTable();
+        showNotification('Inspection marked as completed', 'success');
+      } catch (err) {
+        console.error('Error marking inspection completed:', err);
+        showNotification('Failed to mark completed: ' + (err.message || 'Unknown error'), 'error');
+      }
+    }
+
+    // Mark inspection as pending (or keep pending)
+    async function markInspectionPending(submissionId) {
+      try {
+        showNotification('Setting inspection to pending...', 'info');
+        const submission = submissions.find(s => String(s.id) === String(submissionId));
+        if (!submission) throw new Error('Submission not found');
+
+        const adminUser = (typeof authHelpers !== 'undefined' && authHelpers.getCurrentUser) ? authHelpers.getCurrentUser() : JSON.parse(localStorage.getItem('user') || '{}');
+        if (!adminUser?.email) throw new Error('Admin user not logged in or missing credentials');
+
+        const endpoint = API_CONFIG.ENDPOINTS.ADMIN.UPDATE_FORM;
+        const result = await makeRequest(endpoint, 'POST', {
+          userEmail: submission.submittedBy,
+          formId: submissionId,
+          status: 'inspection_pending',
+          reviewedBy: adminUser.email,
+          reviewedByName: adminUser.name || 'Admin',
+          formType: 'inspection'
+        });
+
+        if (!result || !result.success) throw new Error(result?.message || 'Server rejected the request');
+
+        submission.status = 'inspection_pending';
+        updateDashboard(); updateSubmissionsTable(); renderInspectionTable();
+        showNotification('Inspection set to pending', 'success');
+      } catch (err) {
+        console.error('Error setting inspection pending:', err);
+        showNotification('Failed to set pending: ' + (err.message || 'Unknown error'), 'error');
+      }
+    }
+
+    // Wire generate button
+    document.addEventListener('DOMContentLoaded', function() {
+      const genBtn = document.getElementById('generateAffiliationBtn');
+      if (genBtn) {
+        genBtn.addEventListener('click', function() {
+          if (!currentSubmissionId) {
+            showNotification('No submission selected', 'error');
+            return;
+          }
+          generateAffiliation(currentSubmissionId);
+        });
+        // hide by default until approval
+        genBtn.style.display = 'none';
+      }
+    });
+
+    // Export submissions
+    function exportSubmissions() {
+      const data = JSON.stringify(submissions, null, 2);
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `academic-submissions-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showNotification('Submissions exported successfully!', 'success');
+    }
+
+    // Logout
+    logoutBtn.addEventListener('click', function() {
+      if (confirm('Are you sure you want to logout?')) {
+        showNotification('Logging out...', 'info');
+        setTimeout(() => {
+          // In a real app, this would redirect to login page
+          alert('Logged out successfully!');
+          window.location.href = 'login.html'; // Adjust as needed
+        }, 1000);
+      }
+    });
+
+    // Auto-refresh every 30 seconds
+    setInterval(loadSubmissions, 30000);
+
+    // If page was opened with a hash (e.g. admindashboard.html#submission), open that section
+    (function handleHashOnLoad() {
+      try {
+        const hash = window.location.hash && window.location.hash.replace('#','');
+        if (hash) {
+          // Activate the corresponding section and nav link
+          const navLink = Array.from(document.querySelectorAll('.nav-link')).find(l => l.getAttribute('data-section') === hash);
+          if (navLink) {
+            navLink.click();
+          }
+        }
+      } catch (e) {
+        console.warn('Error handling hash on load', e);
+      }
+    })();
+
+    // Clear all stored data
+    function clearStoredData() {
+      if (!confirm('Are you sure you want to clear all stored submissions? This cannot be undone.')) {
+        return;
+      }
+      
+      try {
+        // Clear arrays
+        submissions = [];
+        filteredSubmissions = [];
+        
+        // Clear localStorage items
+        const keysToRemove = [
+          'submissions',
+          'affiliationData',
+          'lastSubmission',
+          'formData',
+          'academic_submissions',
+          'inspection_submissions',
+          'current_submission'
+        ];
+        
+        keysToRemove.forEach(key => localStorage.removeItem(key));
+        
+        // Clear any session storage items too
+        sessionStorage.clear();
+        
+        // Reset counts
+        document.getElementById('totalSubmissions').textContent = '0';
+        document.getElementById('pendingSubmissions').textContent = '0';
+        document.getElementById('approvedSubmissions').textContent = '0';
+        document.getElementById('rejectedSubmissions').textContent = '0';
+        
+        // Clear tables
+        document.getElementById('recentSubmissions').innerHTML = `
+          <tr>
+            <td colspan="2" class="no-data">
+              <div>
+                <i>📊</i>
+                <h3>No submissions yet</h3>
+                <p>Academic form submissions will appear here</p>
+              </div>
+            </td>
+          </tr>
+        `;
+        
+        document.getElementById('allSubmissions').innerHTML = `
+          <tr>
+            <td colspan="2" class="no-data">
+              <div>
+                <i>📋</i>
+                <h3>No submissions found</h3>
+                <p>Academic form submissions will appear here once submitted</p>
+              </div>
+            </td>
+          </tr>
+        `;
+        
+        // Close any open modal
+        modal.style.display = 'none';
+        
+        showNotification('All stored data has been cleared successfully', 'success');
+        
+        // Reload fresh data from server
+        setTimeout(() => {
+          loadSubmissions();
+        }, 1000);
+      } catch (err) {
+        console.error('Error clearing data:', err);
+        showNotification('Error clearing some data. Please try again.', 'error');
+      }
+    }
+
+    // Add clear data button to UI
+    const clearDataBtn = document.createElement('button');
+    clearDataBtn.className = 'btn btn-reject btn-sm';
+    clearDataBtn.innerHTML = '<i>🗑️</i> Clear Data';
+    clearDataBtn.onclick = clearStoredData;
+    
+    // Initialize dashboard
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add clear data button to actions
+      const tableActions = document.querySelector('.table-actions');
+      if (tableActions) {
+        tableActions.appendChild(clearDataBtn);
+      }
+      
+      // Clear any stale data first
+      clearStoredData();
+      
+      // Then load fresh data
+      loadSubmissions();
+    });
+  </script>
+</body>
+</html>

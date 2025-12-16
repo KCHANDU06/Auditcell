@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Login</title>
+</head>
+<body>
+    <h2>Test Login</h2>
+    <button onclick="testConnection()">Test Server Connection</button>
+    <button onclick="testLogin()">Test Login</button>
+    <div id="result"></div>
+
+    <script>
+        async function testConnection() {
+            try {
+                const response = await fetch('http://localhost:8080');
+                const text = await response.text();
+                document.getElementById('result').textContent = 'Server Connection: ' + text;
+            } catch (error) {
+                document.getElementById('result').textContent = 'Connection Error: ' + error.message;
+            }
+        }
+
+        async function testLogin() {
+            try {
+                const response = await fetch('http://localhost:8080/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: 'gugulothusai877@gmail.com',
+                        password: 'admin123'
+                    })
+                });
+                const data = await response.json();
+                document.getElementById('result').textContent = 'Login Response: ' + JSON.stringify(data);
+            } catch (error) {
+                document.getElementById('result').textContent = 'Login Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
